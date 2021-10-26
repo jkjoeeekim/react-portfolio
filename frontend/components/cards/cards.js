@@ -1,34 +1,17 @@
 import React from 'react';
 import EducationCard from './education_card';
-import ExperienceCard from './experience_card';
+import EducationCardExpanded from './education_card_expanded';
 import ProjectsCard from './projects_card';
-import SkillsCard from './skills_card';
+import ProjectsCardExpanded from './projects_card_expanded';
 
 class Cards extends React.Component {
   constructor(props) {
     super(props);
 
-
+    this.showCard = this.showCard.bind(this);
   }
 
   expandCard(cardName) {
-    // let id = null;
-    // const elem = document.getElementById(`${cardName}`);
-    // console.log(elem);
-    // // debugger;
-    // let currentWidth = elem.clientWidth;
-    // let currentHeight = elem.clientHeight;
-    // let maxHeight = elem.clientHeight + 200;
-    // clearInterval(id);
-    // id = setInterval(frame, 5);
-    // function frame() {
-    //   if (currentWidth == maxHeight) {
-    //     clearInterval(id);
-    //   } else {
-    //     elem.style.width = (currentWidth + 1) + "px";
-    //     // elem.style.left = currentWidth + "px";
-    //   }
-    // }
     const elem = document.getElementById(`${cardName}`);
     elem.classList.add("cards-hovered");
   }
@@ -38,15 +21,29 @@ class Cards extends React.Component {
     elem.classList.remove("cards-hovered");
   }
 
+  showCard(cardName) {
+    console.log(this.props);
+    this.props.receiveCard(cardName);
+  }
+
   render() {
-    return (
-      <div className="cards-container">
-        <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard}></EducationCard>
-        <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard}></ExperienceCard>
-        <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard}></ProjectsCard>
-        <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard}></SkillsCard>
-      </div>
-    );
+    switch (this.props.display) {
+      case 'education-card':
+        return (
+          <EducationCardExpanded />
+        );
+      case 'projects-card':
+        return (
+          <ProjectsCardExpanded />
+        );
+      default:
+        return (
+          <div className="cards-container">
+            <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></EducationCard>
+            <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></ProjectsCard>
+          </div>
+        );
+    }
   }
 }
 

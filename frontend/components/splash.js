@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from './header/top_nav';
-import Cards from './cards/cards';
+import Cards from './cards/cards_container';
 
 class Splash extends React.Component {
   constructor(props) {
@@ -11,7 +11,7 @@ class Splash extends React.Component {
     return (
       <div>
         <Header store={this.props.store}></Header>
-        <Cards store={this.props.store}></Cards>
+        <Cards></Cards>
       </div>
     );
   }

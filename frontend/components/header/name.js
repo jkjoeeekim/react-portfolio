@@ -3,11 +3,17 @@ import React from "react";
 class Name extends React.Component {
   constructor(props) {
     super(props);
+
+    this.state = {
+      id: 'name'
+    };
   }
 
   boldLetters() {
     const greyedElements = document.getElementsByClassName('greyed-out-letters');
     const highlightElements = document.getElementsByClassName('highlight');
+
+    this.setState({ id: 'name-hovered' });
 
     for (let i = 0; i < greyedElements.length; i++) {
       greyedElements[i].classList.add("greyed-out-letters-unbold");
@@ -21,6 +27,9 @@ class Name extends React.Component {
   unboldLetters() {
     const greyedElements = document.getElementsByClassName('greyed-out-letters');
     const highlightElements = document.getElementsByClassName('highlight');
+    // const nameBanner = document.getElementById("name-hovered");
+
+    this.setState({ id: 'name' });
 
     for (let i = 0; i < highlightElements.length; i++) {
       highlightElements[i].classList.remove("highlight-bold");
@@ -34,7 +43,7 @@ class Name extends React.Component {
   render() {
     return (
       <div
-        id="name"
+        id={this.state.id}
         onMouseEnter={() => this.boldLetters()}
         onMouseLeave={() => this.unboldLetters()}
       >

@@ -1,6 +1,7 @@
 import React from 'react';
 import Splash from './splash';
 import { Provider } from 'react-redux';
+import { HashRouter } from 'react-router-dom';
 
 class Root extends React.Component {
   constructor(props) {
@@ -10,7 +11,9 @@ class Root extends React.Component {
   render() {
     return (
       <Provider store={this.props.store}>
-        <Splash />
+        <HashRouter>
+          <Splash />
+        </HashRouter>
       </Provider>
     );
   }
