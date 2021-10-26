@@ -53,6 +53,7 @@ html {
   color: rgb(249,156,23);
   font-weight: 200;
   letter-spacing: 3px;
+  outline: none;
   /* transition: 0.3s; */
 }
 
@@ -60,18 +61,21 @@ html {
   color: rgb(249,156,23);
   font-weight: 400;
   letter-spacing: 0px;
+  transition: 2s;
 }
 
 .greyed-out-letters {
   font-weight: 200;
   letter-spacing: 3px;
-  /* transition: 0.3s; */
 }
 
 .greyed-out-letters-unbold {
-  font-weight: 100;
+  font-weight: 200;
   letter-spacing: 0px;
   color: rgb(126, 126, 126);
+  opacity: 0.2;
+  transition: 2s;
+  outline: none;
 }
 
 #info {
@@ -106,6 +110,10 @@ html {
   justify-content: space-evenly;
 }
 
+#education-card {
+  position: relative;
+}
+
 .cards {
   height: 45vh;
   width: 22vw;
@@ -118,22 +126,23 @@ html {
   transition: .4s;
 }
 
-.cards-hovered {
-  height: 50vh;
-  width: 45vw;
-  border-radius: 20px;
-  background-color: rgb(51,51,51);
-  box-shadow: 0px 0px 10px rgba(249,156,23, 60%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  cursor: pointer;
+#cards-hovered {
+  position: relative !important;
+  height: 50vh !important;
+  width: 45vw !important;
+  border-radius: 20px !important;
+  background-color: rgb(51,51,51) !important;
+  box-shadow: 0px 0px 10px rgba(249,156,23, 60%) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  cursor: pointer !important;
 }
 
 .cards-text {
   margin-bottom: 7vh;
   padding-bottom: 7vh;
-  border-bottom: 2px solid black;
+  border-bottom: 2px solid white;
 }
 
 .cards p {
@@ -155,7 +164,7 @@ html {
   width: 100vw;
   -moz-animation-duration: 3s;
   /* transition: 10s ease; */
-  background-color: rgba(0, 0, 0, 0.3)
+  background-color: rgba(0, 0, 0, 0.6)
 }
 
 .education-card-expanded {
@@ -166,9 +175,19 @@ html {
   left: 10vw;
   background-color: rgb(82, 82, 82);
   border-radius: 30px;
-  box-shadow: 0px 0px 8px rgba(255, 255, 255, 90%);
+  box-shadow: 0px 0px 8px rgba(255, 255, 255, 100%);
   transition: 2s;
   z-index: 5;
+}
+/* Card toggling */
+/* <----  Start ----> */
+#toggle-button {
+  background-color: rgb(255, 255, 255, 30%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+  color: red;
 }
 /* <----  End   ----> */
 

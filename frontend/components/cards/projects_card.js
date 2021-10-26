@@ -1,4 +1,5 @@
 import React from "react";
+import { motion, AnimatePresence } from 'framer-motion';
 
 class ProjectsCard extends React.Component {
   constructor(props) {
@@ -8,16 +9,21 @@ class ProjectsCard extends React.Component {
 
   render() {
     return (
-      <div
-        onMouseEnter={() => this.props.expandCard(this.cardName)}
-        onMouseLeave={() => this.props.shrinkCard(this.cardName)}
-        onClick={() => this.props.showCard(this.cardName)}
-        id={this.cardName}
-        className="cards"
-      >
-        <p className="cards-text">Tech stacks</p>
-        <p>Projects</p>
-      </div>
+      <AnimatePresence>
+        <motion.div
+          onMouseEnter={() => this.props.expandCard(this.cardName)}
+          onMouseLeave={() => this.props.shrinkCard(this.cardName)}
+          onClick={() => this.props.showCard(this.cardName)}
+          initial={{ opacity: 0.4 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0.4 }}
+          id={this.cardName}
+          className="cards"
+        >
+          <p className="cards-text">Tech stacks</p>
+          <p>Projects</p>
+        </motion.div>
+      </AnimatePresence>
     );
   }
 }
