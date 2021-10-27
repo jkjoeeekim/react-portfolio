@@ -169,12 +169,12 @@ var Cards = /*#__PURE__*/function (_React$Component) {
     key: "expandCard",
     value: function expandCard(cardName) {
       var elem = document.getElementById("".concat(cardName));
-      elem.id = "cards-hovered";
+      elem.id = "".concat(cardName, "-cards-hovered");
     }
   }, {
     key: "shrinkCard",
     value: function shrinkCard(cardName) {
-      var elem = document.getElementById('cards-hovered');
+      var elem = document.getElementById("".concat(cardName, "-cards-hovered"));
       elem.id = "".concat(cardName);
     }
   }, {
@@ -278,34 +278,34 @@ function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Sy
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 
-
+var z = 30;
 var variants = {
   active: {
-    position: 'absolute !important',
-    height: '80vh !important',
-    width: '80vw !important',
-    top: '0vh !important',
-    left: '10vw !important',
-    backgroundColor: 'rgb(82, 82, 82) !important',
-    borderRadius: '30px !important',
-    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%) !important',
-    transition: '2s !important',
-    zIndex: '5 !important'
+    // position: 'fixed',
+    height: '85vh',
+    width: '85vw',
+    top: '-35vh',
+    left: '-5vw',
+    backgroundColor: 'rgb(82, 82, 82)',
+    borderRadius: '30px',
+    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    transition: '3s',
+    zIndex: z + 1
   },
-  inActive: _defineProperty({
-    height: '45vh',
-    width: '22vw',
+  inActive: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
     borderRadius: '20px',
-    backgroundColor: 'rgb(51,51,51)',
-    boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    transition: '0.4s'
-  }, "display", 'none')
+    backgroundColor: 'rgb(51,51,51, 0%)',
+    // boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    transition: '3s'
+  }
 };
 
 var EducationCard = function EducationCard(props) {
@@ -314,12 +314,21 @@ var EducationCard = function EducationCard(props) {
       isToggled = _useState2[0],
       setToggle = _useState2[1];
 
+  var toggleAndShrink = function toggleAndShrink(card) {
+    props.shrinkCard(card);
+    console.log(isToggled, setToggle);
+
+    if (isToggled) {
+      setToggle(!isToggled);
+    }
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     onMouseEnter: function onMouseEnter() {
       return props.expandCard('education-card');
     },
     onMouseLeave: function onMouseLeave() {
-      return props.shrinkCard('education-card');
+      return toggleAndShrink('education-card');
     } // onClick={() => this.props.showCard(this.state.cardName)}
     // onClick={() => setToggle(!isToggled)}
     // animate={isToggled ? "active" : "inActive"}
@@ -332,8 +341,7 @@ var EducationCard = function EducationCard(props) {
     },
     exit: {
       opacity: 0.4
-    } // variants={variants}
-    ,
+    },
     id: "education-card",
     className: "cards"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -341,8 +349,9 @@ var EducationCard = function EducationCard(props) {
       return setToggle(!isToggled);
     },
     animate: isToggled ? "active" : "inActive",
+    variants: variants,
     id: "toggle-button"
-  }, "BTN"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
   }, "Education"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Experience")));
 };
@@ -435,82 +444,133 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+// import React from "react";
+// import { motion, AnimatePresence } from 'framer-motion';
+// class ProjectsCard extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.cardName = 'projects-card';
+//   }
+//   render() {
+//     return (
+//       <AnimatePresence>
+//         <motion.div
+//           onMouseEnter={() => this.props.expandCard(this.cardName)}
+//           onMouseLeave={() => this.props.shrinkCard(this.cardName)}
+//           onClick={() => this.props.showCard(this.cardName)}
+//           initial={{ opacity: 0.4 }}
+//           animate={{ opacity: 1 }}
+//           exit={{ opacity: 0.4 }}
+//           id={this.cardName}
+//           className="cards"
+//         >
+//           <motion.div
+//             initial={{ opacity: 0.4 }}
+//             animate={{ opacity: 1 }}
+//             exit={{ opacity: 0.4 }}
+//           >
+//             <p className="cards-text">Techs</p>
+//             <p>Projects</p>
+//           </motion.div>
+//         </motion.div>
+//       </AnimatePresence>
+//     );
+//   }
+// }
+// export default ProjectsCard;
+// Using hooks //
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-
-var ProjectsCard = /*#__PURE__*/function (_React$Component) {
-  _inherits(ProjectsCard, _React$Component);
-
-  var _super = _createSuper(ProjectsCard);
-
-  function ProjectsCard(props) {
-    var _this;
-
-    _classCallCheck(this, ProjectsCard);
-
-    _this = _super.call(this, props);
-    _this.cardName = 'projects-card';
-    return _this;
+var variants = {
+  active: {
+    position: 'absolute',
+    height: '85vh',
+    width: '85vw',
+    top: '-35vh',
+    left: '-37vw',
+    backgroundColor: 'rgb(82, 82, 82, 100%)',
+    borderRadius: '30px',
+    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    transition: '3s',
+    zIndex: '25'
+  },
+  inActive: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    borderRadius: '20px',
+    backgroundColor: 'rgb(51,51,51, 0%)',
+    borderThickness: '0px',
+    // boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
+    display: 'flex',
+    flexDirection: 'column',
+    justifyContent: 'center',
+    transition: '3s'
   }
+};
 
-  _createClass(ProjectsCard, [{
-    key: "render",
-    value: function render() {
-      var _this2 = this;
+var ProjectsCard = function ProjectsCard(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isToggled = _useState2[0],
+      setToggle = _useState2[1];
 
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        onMouseEnter: function onMouseEnter() {
-          return _this2.props.expandCard(_this2.cardName);
-        },
-        onMouseLeave: function onMouseLeave() {
-          return _this2.props.shrinkCard(_this2.cardName);
-        },
-        onClick: function onClick() {
-          return _this2.props.showCard(_this2.cardName);
-        },
-        initial: {
-          opacity: 0.4
-        },
-        animate: {
-          opacity: 1
-        },
-        exit: {
-          opacity: 0.4
-        },
-        id: this.cardName,
-        className: "cards"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: "cards-text"
-      }, "Tech stacks"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Projects")));
+  var toggleAndShrink = function toggleAndShrink(card) {
+    props.shrinkCard(card);
+    console.log(isToggled, setToggle);
+
+    if (isToggled) {
+      setToggle(!isToggled);
     }
-  }]);
+  };
 
-  return ProjectsCard;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    onMouseEnter: function onMouseEnter() {
+      return props.expandCard('projects-card');
+    },
+    onMouseLeave: function onMouseLeave() {
+      return toggleAndShrink('projects-card');
+    } // onClick={() => this.props.showCard(this.state.cardName)}
+    // onClick={() => setToggle(!isToggled)}
+    // animate={isToggled ? "active" : "inActive"}
+    ,
+    initial: {
+      opacity: 0.4
+    },
+    animate: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0.4
+    },
+    id: "projects-card",
+    className: "cards"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    onClick: function onClick() {
+      return setToggle(!isToggled);
+    },
+    animate: isToggled ? "active" : "inActive",
+    variants: variants,
+    id: "toggle-project-button"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "cards-text"
+  }, "Techs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Projects")));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (ProjectsCard);
+;
 
 /***/ }),
 

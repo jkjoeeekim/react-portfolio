@@ -13,11 +13,11 @@ class Cards extends React.Component {
 
   expandCard(cardName) {
     const elem = document.getElementById(`${cardName}`);
-    elem.id = "cards-hovered";
+    elem.id = `${cardName}-cards-hovered`;
   }
 
   shrinkCard(cardName) {
-    const elem = document.getElementById('cards-hovered');
+    const elem = document.getElementById(`${cardName}-cards-hovered`);
     elem.id = `${cardName}`;
   }
 

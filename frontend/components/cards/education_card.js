@@ -1,56 +1,64 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 
+const z = 30;
 const variants = {
   active: {
-    position: 'absolute !important',
-    height: '80vh !important',
-    width: '80vw !important',
-    top: '0vh !important',
-    left: '10vw !important',
-    backgroundColor: 'rgb(82, 82, 82) !important',
-    borderRadius: '30px !important',
-    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%) !important',
-    transition: '2s !important',
-    zIndex: '5 !important',
+    // position: 'fixed',
+    height: '85vh',
+    width: '85vw',
+    top: '-35vh',
+    left: '-5vw',
+    backgroundColor: 'rgb(82, 82, 82)',
+    borderRadius: '30px',
+    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    transition: '3s',
+    zIndex: z + 1,
   },
   inActive: {
-    height: '45vh',
-    width: '22vw',
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
     borderRadius: '20px',
-    backgroundColor: 'rgb(51,51,51)',
-    boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
-    transition: '0.4s',
-    display: 'none'
+    backgroundColor: 'rgb(51,51,51, 0%)',
+    // boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    transition: '3s',
   }
 };
 const EducationCard = (props) => {
   const [isToggled, setToggle] = useState(false);
 
+  const toggleAndShrink = (card) => {
+    props.shrinkCard(card);
+    console.log(isToggled, setToggle);
+    if (isToggled) {
+      setToggle(!isToggled);
+    }
+  };
+
   return (
     <AnimatePresence>
       <motion.div
         onMouseEnter={() => props.expandCard('education-card')}
-        onMouseLeave={() => props.shrinkCard('education-card')}
+        onMouseLeave={() => toggleAndShrink('education-card')}
         // onClick={() => this.props.showCard(this.state.cardName)}
         // onClick={() => setToggle(!isToggled)}
         // animate={isToggled ? "active" : "inActive"}
         initial={{ opacity: 0.4 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0.4 }}
-        // variants={variants}
         id='education-card'
         className="cards"
       >
         <motion.div
           onClick={() => setToggle(!isToggled)}
           animate={isToggled ? "active" : "inActive"}
+          variants={variants}
           id='toggle-button'
         >
-          BTN
         </motion.div>
         <p className="cards-text">Education</p>
         <p>Experience</p>
