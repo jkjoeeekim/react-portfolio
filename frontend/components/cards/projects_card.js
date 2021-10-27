@@ -46,7 +46,7 @@ const variants = {
     position: 'absolute',
     height: '85vh',
     width: '85vw',
-    top: '-35vh',
+    top: '-33vh',
     left: '-37vw',
     backgroundColor: 'rgb(82, 82, 82, 100%)',
     borderRadius: '30px',
@@ -62,9 +62,10 @@ const variants = {
     backgroundColor: 'rgb(51,51,51, 0%)',
     borderThickness: '0px',
     // boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
-    display: 'flex',
-    flexDirection: 'column',
-    justifyContent: 'center',
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    zIndex: '24',
     transition: '3s',
   }
 };
@@ -99,6 +100,19 @@ const ProjectsCard = (props) => {
           variants={variants}
           id='toggle-project-button'
         >
+          {isToggled ? (
+            <motion.div id="icons">
+              <motion.div id="left-icon">
+                <i class="fas fa-angle-double-left left-arrow-icon"></i>
+              </motion.div>
+              <motion.div id="right-icon">
+                <i class="fas fa-angle-double-right right-arrow-icon"></i>
+              </motion.div>
+            </motion.div>
+          ) : (
+            <div></div>
+          )
+          }
         </motion.div>
         <p className="cards-text">Techs</p>
         <p>Projects</p>

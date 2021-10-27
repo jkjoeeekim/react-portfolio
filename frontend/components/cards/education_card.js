@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import EducationCardExpanded from './education_card_expanded';
 
 const z = 30;
 const variants = {
   active: {
-    // position: 'fixed',
+    position: 'absolute',
     height: '85vh',
     width: '85vw',
     top: '-35vh',
@@ -25,6 +26,7 @@ const variants = {
     // display: 'flex',
     // flexDirection: 'column',
     // justifyContent: 'center',
+    zIndex: '24',
     transition: '3s',
   }
 };
@@ -59,6 +61,19 @@ const EducationCard = (props) => {
           variants={variants}
           id='toggle-button'
         >
+          {isToggled ? (
+            <motion.div id="icons">
+              <motion.div id="left-icon">
+                <i class="fas fa-angle-double-left left-arrow-icon"></i>
+              </motion.div>
+              <motion.div id="right-icon">
+                <i class="fas fa-angle-double-right right-arrow-icon"></i>
+              </motion.div>
+            </motion.div>
+          ) : (
+            ''
+          )
+          }
         </motion.div>
         <p className="cards-text">Education</p>
         <p>Experience</p>

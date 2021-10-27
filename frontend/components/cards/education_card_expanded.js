@@ -13,6 +13,14 @@ class EducationCardExpanded extends React.Component {
           // id={this.cardName}
           className={this.cardName + " card-detail"}
         >
+          <motion.div id="icons">
+            <motion.div id="left-icon">
+              <i class="fas fa-angle-double-left left-arrow-icon"></i>
+            </motion.div>
+            <motion.div id="right-icon">
+              <i class="fas fa-angle-double-right right-arrow-icon"></i>
+            </motion.div>
+          </motion.div>
           <p className="">card</p>
         </div>
       </div>
