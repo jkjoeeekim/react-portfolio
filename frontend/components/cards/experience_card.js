@@ -25,6 +25,7 @@
 // Using hooks //
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Content from './content/content';
 
 const variants = {
   active: {
@@ -35,8 +36,8 @@ const variants = {
     left: '-13vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
-    // boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
-    boxShadow: '0px 0px 12px rgb(10,149,255)',
+    border: '1px solid rgb(249, 156, 23)',
+    boxShadow: '0px 0px 13px rgba(249, 156, 23, 100%)',
     transition: '3s',
     zIndex: '500',
   },
@@ -102,17 +103,20 @@ const ExperienceCard = (props) => {
             )}
           </motion.div>
           {isToggled ? (
-            <motion.div id="icons">
-              <motion.button id="left-icon" onClick={() => clickButton('left')}>
-                <motion.div className="left-arrow-icon">
-                  <i className="fas fa-angle-double-left"></i>
-                </motion.div>
-              </motion.button>
-              <motion.button id="right-icon">
-                <motion.div className="left-arrow-icon">
-                  <i className="fas fa-angle-double-right"></i>
-                </motion.div>
-              </motion.button>
+            <motion.div>
+              <motion.div id="icons">
+                <motion.button id="left-icon">
+                  <motion.div className="left-arrow-icon">
+                    <i className="fas fa-angle-double-left"></i>
+                  </motion.div>
+                </motion.button>
+                <motion.button id="right-icon">
+                  <motion.div className="right-arrow-icon">
+                    <i className="fas fa-angle-double-right"></i>
+                  </motion.div>
+                </motion.button>
+              </motion.div>
+              <Content />
             </motion.div>
           ) : (
             <div></div>
