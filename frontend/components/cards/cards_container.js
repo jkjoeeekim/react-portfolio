@@ -4,7 +4,7 @@ import Cards from './cards';
 
 const mSTP = (state, ownParams) => ({
   state: state,
-  display: state.splash.display,
+  // display: state.splash.display,
   ownParams
 });
 

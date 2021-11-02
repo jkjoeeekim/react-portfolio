@@ -105,35 +105,63 @@ html {
 /* Cards styling */
 /* <----  Start ----> */
 .cards-container {
-  position: absolute;
-  height: 10em;
-  width: 100%;
-  margin-top: 25vh;
   display: flex;
   flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: center;
+  margin-top: 22vh;
+  height: 55vh;
+  width: 95vw;
+  margin-left: 2.5vw;
+  transition: 1s;
+}
+
+.cards-container-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.cards-container-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 #education-card {
   position: relative;
+  box-shadow: -10px -10px 0px 10px rgba(249, 156, 23, 35%);
+  transition: 1.5s;
 }
 
 #projects-card {
   position: relative;
+  box-shadow: 10px -10px 0px 10px rgba(249, 156, 23, 35%);
+  transition: 1.5s;
+}
+
+#skills-card {
+  position: relative;
+  box-shadow: 10px 10px 0px 10px rgba(249, 156, 23, 35%);
+  transition: 1.5s;
+}
+
+#experience-card {
+  position: relative;
+  box-shadow: -10px 10px 0px 10px rgba(249, 156, 23, 35%);
+  transition: 1.5s;
 }
 
 .cards {
   position: relative;
-  height: 45vh;
-  width: 22vw;
-  border-radius: 220px;
-  background-color: rgb(51,51,51);
-  box-shadow: 0px 0px 3px rgba(208, 208, 208, 70%);
+  height: 8vh;
+  width: 19vw;
+  border-radius: 20px;
+  /* background-color: rgb(51,51,51); */
   display: flex;
   flex-direction: column;
   justify-content: center;
   transition: .4s;
-  z-index: 5;
+  z-index: 22;
 }
 
 #education-card-cards-hovered {
@@ -142,28 +170,28 @@ html {
   width: 45vw !important;
   border-radius: 20px !important;
   background-color: rgb(51,51,51) !important;
-  box-shadow: 0px 0px 10px rgba(249,156,23, 60%) !important;
+  box-shadow: 0px 0px 14px rgba(249,156,23, 80%) !important;
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
-  border: 8px solid rgb(22, 22, 22) !important;
-  opacity: 0.85 !important;
+  border: 3px solid rgb(249,156,23);
   cursor: pointer !important;
-  /* background-image: url(./frontend/assets/super_wario.gif);
+  background-image: url(./frontend/assets/super_wario.gif);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center; */
+  background-position: center center;
   transition: 1.4s;
+  z-index: 24;
 }
+
 #projects-card-cards-hovered {
   position: relative !important;
   height: 50vh !important;
   width: 45vw !important;
   border-radius: 20px !important;
   background-color: rgb(22, 22, 22) !important;
-  box-shadow: 0px 0px 10px rgba(249,156,23, 60%) !important;
-  border: 8px solid black;
-  opacity: 0.85 !important;
+  box-shadow: 0px 0px 14px rgba(249,156,23, 80%) !important;
+  border: 3px solid rgb(249,156,23);
   display: flex !important;
   flex-direction: column !important;
   justify-content: center !important;
@@ -173,6 +201,47 @@ html {
   background-repeat: no-repeat;
   background-position: center center;
   transition: 1.4s;
+  z-index: 24;
+}
+
+#skills-card-cards-hovered {
+  position: relative !important;
+  height: 50vh !important;
+  width: 45vw !important;
+  border-radius: 20px !important;
+  background-color: rgb(22, 22, 22) !important;
+  box-shadow: 0px 0px 14px rgba(249,156,23, 80%) !important;
+  border: 3px solid rgb(249,156,23);
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  background-image: url(./frontend/assets/super_wario.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 1.4s;
+  z-index: 24;
+}
+
+#experience-card-cards-hovered {
+  position: relative !important;
+  height: 50vh !important;
+  width: 45vw !important;
+  border-radius: 20px !important;
+  background-color: rgb(22, 22, 22) !important;
+  box-shadow: 0px 0px 14px rgba(249,156,23, 80%) !important;
+  border: 3px solid rgb(249,156,23);
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  cursor: pointer !important;
+  background-image: url(./frontend/assets/super_wario.gif);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  transition: 1.4s;
+  z-index: 24;
 }
 
 #education-card-cards-hovered p {
@@ -183,18 +252,70 @@ html {
   display: none;
 }
 
-.cards-text {
-  border-bottom: 2px solid white;
-  margin-bottom: 7vh;
-  padding-bottom: 7vh;
+.cards-text-projects {
+  /* border-bottom: 2px solid rgba(204, 204, 204, 0.5);
+  border-left: 2px solid rgba(204, 204, 204, 0.5); */
 }
 
 .cards p {
   text-align: center;
-  font-size: 2.44vw;
-  color: rgb(202, 202, 202);
-  letter-spacing: 1px;
-  font-weight: 100;
+  font-size: 2.5vh;
+  color: rgb(202, 202, 202, 0.9);
+  letter-spacing: 2px;
+  font-weight: 400;
+  z-index: 2;
+  margin-right: 0.4vw;
+  padding: 2.75vh;
+}
+/* <----  End   ----> */
+
+/* Expanded Cards styling */
+/* <----  Start ----> */
+.expand-button {
+  height: 100%;
+  width: 100%;
+}
+
+.shrink-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  height: 7vh;
+  position: absolute;
+  width: 100%;
+  transition: 1s;
+  z-index: 50;
+}
+
+.shrink-button-expanded {
+  height: 12vh;
+}
+
+.shrink-button-expanded .close-button {
+  width: 12.5vw;
+  transition: 1s;
+}
+
+.shrink-button-expanded .close-icon {
+  font-size: 2.8vw;
+  transition: 1s;
+}
+
+.close-button {
+  width: 10vw;
+  font-size: 16px;
+  height: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  transition: 1s;
+}
+
+.close-icon {
+  font-size: 2vw;
+  transition: 1s;
+  color: rgb(249,156,23);
 }
 /* <----  End   ----> */
 
@@ -220,11 +341,10 @@ html {
   border-radius: 30px;
   box-shadow: 0px 0px 8px rgba(255, 255, 255, 100%);
   transition: 2s;
-  z-index: 35;
 }
 /* Card toggling */
 /* <----  Start ----> */
-#toggle-button {
+#toggle-education-button {
   background-color: rgb(255, 255, 255, 0%);
   position: absolute;
   width: 100%;
@@ -242,37 +362,113 @@ html {
   color: red;
 }
 
+#toggle-skills-button {
+  background-color: rgb(255, 255, 255, 0%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 24;
+  color: red;
+}
+
+#toggle-experience-button {
+  background-color: rgb(255, 255, 255, 0%);
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 24;
+  color: red;
+}
+
+#new-container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color:rgb(202, 202, 202);
+  z-index: 9999;
+  transition: 3s;
+}
+
 #icons {
   display: flex;
   position: absolute;
   flex-direction: row;
-  left: -2vw;
   width: 100%;
+  height: 100%;
   justify-content: space-between;
 }
 
-
 #right-icon {
   display: flex;
-  flex-direction: row;
-  justify-content: flex-end;
+  flex-direction: column;
+  justify-content: center;
   color: black;
+  height: 100%;
+  width: 8vw;
+  border: none;
+  background-color: inherit;
+  border-top-right-radius: 30px;
+  border-bottom-right-radius: 30px;
+  transition: 0.25s;
+}
+
+#right-icon:hover {
+  background-color: rgb(54, 50, 50);
+  box-shadow: -2px 0px 8px rgb(255, 255, 255, 80%);
+  cursor: pointer;
+  width: 14vw;
+  transition: 0.5s;
+}
+
+#left-icon {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: black;
+  height: 100%;
+  width: 8vw;
+  border: none;
+  background-color: inherit;
+  border-top-left-radius: 30px;
+  border-bottom-left-radius: 30px;
+  transition: 0.25s;
+}
+
+#left-icon:hover {
+  background-color: rgb(54, 50, 50);
+  box-shadow: 2px 0px 8px rgb(255, 255, 255, 80%);
+  cursor: pointer;
+  width: 14vw;
+  transition: 0.5s;
 }
 
 .right-arrow-icon {
   color: rgba(249,156,23, 80%);
   font-size: 2.44em;
-  width: 3vw;
+  width: 100%;
   height: 100%;
   display: flex;
-  justify-content: flex-start;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .left-arrow-icon {
   color: rgba(249,156,23, 80%);
   font-size: 2.44em;
-  width: 2vw;
+  width: 100%;
   height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#expanded {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-color: white;
+  z-index: 9999;
+  transition: 3s;
 }
 /* <----  End   ----> */
 

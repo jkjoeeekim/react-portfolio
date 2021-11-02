@@ -44,15 +44,16 @@ import { motion, AnimatePresence } from "framer-motion";
 const variants = {
   active: {
     position: 'absolute',
-    height: '85vh',
-    width: '85vw',
-    top: '-33vh',
-    left: '-37vw',
-    backgroundColor: 'rgb(82, 82, 82, 100%)',
+    height: '90vh',
+    width: '90vw',
+    top: '-37vh',
+    left: '-32vw',
+    backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
-    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    // boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    boxShadow: '0px 0px 12px rgb(10,149,255)',
     transition: '3s',
-    zIndex: '25',
+    zIndex: '500',
   },
   inActive: {
     position: 'absolute',
@@ -80,6 +81,10 @@ const ProjectsCard = (props) => {
     }
   };
 
+  const clickButton = (dir) => {
+    console.log(dir);
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -95,27 +100,47 @@ const ProjectsCard = (props) => {
         className="cards"
       >
         <motion.div
-          onClick={() => setToggle(!isToggled)}
           animate={isToggled ? "active" : "inActive"}
           variants={variants}
           id='toggle-project-button'
         >
+          <motion.div
+            onClick={() => setToggle(!isToggled)}
+            className={isToggled ? 'shrink-button' : 'expand-button'}
+            onMouseEnter={() => props.expandButton()}
+            onMouseLeave={() => props.shrinkButton()}
+            animate={{ opacity: 1 }}
+          >
+            {isToggled ? (
+              <motion.div
+                className='close-button'
+              >
+                <i className="far fa-times-circle close-icon"></i>
+              </motion.div>
+            ) : (
+              <motion.div>
+
+              </motion.div>
+            )}
+          </motion.div>
           {isToggled ? (
             <motion.div id="icons">
-              <motion.div id="left-icon">
-                <i class="fas fa-angle-double-left left-arrow-icon"></i>
-              </motion.div>
-              <motion.div id="right-icon">
-                <i class="fas fa-angle-double-right right-arrow-icon"></i>
-              </motion.div>
+              <motion.button id="left-icon" onClick={() => clickButton('left')}>
+                <motion.div className="left-arrow-icon">
+                  <i className="fas fa-angle-double-left"></i>
+                </motion.div>
+              </motion.button>
+              <motion.button id="right-icon">
+                <motion.div className="left-arrow-icon">
+                  <i className="fas fa-angle-double-right"></i>
+                </motion.div>
+              </motion.button>
             </motion.div>
           ) : (
             <div></div>
-          )
-          }
+          )}
         </motion.div>
-        <p className="cards-text">Techs</p>
-        <p>Projects</p>
+        <p className="cards-text-projects">Projects</p>
       </motion.div>
     </AnimatePresence>
   );

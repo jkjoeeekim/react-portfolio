@@ -1,20 +1,19 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import EducationCardExpanded from './education_card_expanded';
 
-const z = 30;
 const variants = {
   active: {
     position: 'absolute',
-    height: '85vh',
-    width: '85vw',
-    top: '-35vh',
-    left: '-5vw',
+    height: '90vh',
+    width: '90vw',
+    top: '-37vh',
+    left: '-13vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
-    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    border: '2px solid rgb(10,149,255)',
+    boxShadow: '0px 0px 12px rgb(10,149,255)',
     transition: '3s',
-    zIndex: z + 1,
+    zIndex: '500',
   },
   inActive: {
     position: 'absolute',
@@ -56,27 +55,47 @@ const EducationCard = (props) => {
         className="cards"
       >
         <motion.div
-          onClick={() => setToggle(!isToggled)}
           animate={isToggled ? "active" : "inActive"}
           variants={variants}
-          id='toggle-button'
+          id='toggle-education-button'
         >
+          <motion.div
+            onClick={() => setToggle(!isToggled)}
+            className={isToggled ? 'shrink-button' : 'expand-button'}
+            onMouseEnter={() => props.expandButton()}
+            onMouseLeave={() => props.shrinkButton()}
+            animate={{ opacity: 1 }}
+          >
+            {isToggled ? (
+              <motion.div
+                className='close-button'
+              >
+                <i className="far fa-times-circle close-icon"></i>
+              </motion.div>
+            ) : (
+              <motion.div>
+
+              </motion.div>
+            )}
+          </motion.div>
           {isToggled ? (
             <motion.div id="icons">
-              <motion.div id="left-icon">
-                <i class="fas fa-angle-double-left left-arrow-icon"></i>
-              </motion.div>
-              <motion.div id="right-icon">
-                <i class="fas fa-angle-double-right right-arrow-icon"></i>
-              </motion.div>
+              <motion.button id="left-icon">
+                <motion.div className="left-arrow-icon">
+                  <i className="fas fa-angle-double-left"></i>
+                </motion.div>
+              </motion.button>
+              <motion.button id="right-icon">
+                <motion.div className="right-arrow-icon">
+                  <i className="fas fa-angle-double-right"></i>
+                </motion.div>
+              </motion.button>
             </motion.div>
           ) : (
             ''
-          )
-          }
+          )}
         </motion.div>
         <p className="cards-text">Education</p>
-        <p>Experience</p>
       </motion.div>
     </AnimatePresence>
   );

@@ -118,10 +118,11 @@ var receiveCard = function receiveCard(cardName) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _education_card__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./education_card */ "./frontend/components/cards/education_card.js");
-/* harmony import */ var _education_card_expanded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./education_card_expanded */ "./frontend/components/cards/education_card_expanded.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+/* harmony import */ var _education_card__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./education_card */ "./frontend/components/cards/education_card.js");
 /* harmony import */ var _projects_card__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projects_card */ "./frontend/components/cards/projects_card.js");
-/* harmony import */ var _projects_card_expanded__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./projects_card_expanded */ "./frontend/components/cards/projects_card_expanded.js");
+/* harmony import */ var _skills_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./skills_card */ "./frontend/components/cards/skills_card.js");
+/* harmony import */ var _experience_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./experience_card */ "./frontend/components/cards/experience_card.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -143,6 +144,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -184,30 +186,80 @@ var Cards = /*#__PURE__*/function (_React$Component) {
       this.props.receiveCard(cardName);
     }
   }, {
+    key: "expandButton",
+    value: function expandButton() {
+      var elem = document.getElementsByClassName('shrink-button')[0];
+      console.log(document.getElementsByClassName('shrink-button'), elem);
+
+      if (!!elem) {
+        elem.classList.add('shrink-button-expanded');
+      }
+    }
+  }, {
+    key: "shrinkButton",
+    value: function shrinkButton() {
+      var elem = document.getElementsByClassName('shrink-button')[0];
+      console.log(document.getElementsByClassName('shrink-button'), elem);
+
+      if (!!elem) {
+        elem.classList.remove('shrink-button-expanded');
+      }
+    }
+  }, {
     key: "render",
     value: function render() {
-      switch (this.props.display) {
-        case 'education-card':
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_education_card_expanded__WEBPACK_IMPORTED_MODULE_2__["default"], null);
-
-        case 'projects-card':
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_projects_card_expanded__WEBPACK_IMPORTED_MODULE_4__["default"], null);
-
-        default:
-          return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-            className: "cards-container"
-          }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_education_card__WEBPACK_IMPORTED_MODULE_1__["default"], {
-            store: this.props.store,
-            expandCard: this.expandCard,
-            shrinkCard: this.shrinkCard,
-            showCard: this.showCard
-          }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_projects_card__WEBPACK_IMPORTED_MODULE_3__["default"], {
-            store: this.props.store,
-            expandCard: this.expandCard,
-            shrinkCard: this.shrinkCard,
-            showCard: this.showCard
-          }));
-      }
+      // switch (this.props.display) {
+      //   case 'education-card':
+      //     return (
+      //       <EducationCardExpanded />
+      //     );
+      //   case 'projects-card':
+      //     return (
+      //       <ProjectsCardExpanded />
+      //     );
+      //   default:
+      //     return (
+      //       <div className="cards-container">
+      //         <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></EducationCard>
+      //         <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></ProjectsCard>
+      //       </div>
+      //     );
+      // }
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container-left"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_education_card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_experience_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container-right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_projects_card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_card__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      }))));
     }
   }]);
 
@@ -237,7 +289,7 @@ __webpack_require__.r(__webpack_exports__);
 var mSTP = function mSTP(state, ownParams) {
   return {
     state: state,
-    display: state.splash.display,
+    // display: state.splash.display,
     ownParams: ownParams
   };
 };
@@ -266,7 +318,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
-/* harmony import */ var _education_card_expanded__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./education_card_expanded */ "./frontend/components/cards/education_card_expanded.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -281,20 +332,19 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
-
-var z = 30;
 var variants = {
   active: {
     position: 'absolute',
-    height: '85vh',
-    width: '85vw',
-    top: '-35vh',
-    left: '-5vw',
+    height: '90vh',
+    width: '90vw',
+    top: '-37vh',
+    left: '-13vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
-    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    border: '2px solid rgb(10,149,255)',
+    boxShadow: '0px 0px 12px rgb(10,149,255)',
     transition: '3s',
-    zIndex: z + 1
+    zIndex: '500'
   },
   inActive: {
     position: 'absolute',
@@ -348,25 +398,44 @@ var EducationCard = function EducationCard(props) {
     id: "education-card",
     className: "cards"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    animate: isToggled ? "active" : "inActive",
+    variants: variants,
+    id: "toggle-education-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     onClick: function onClick() {
       return setToggle(!isToggled);
     },
-    animate: isToggled ? "active" : "inActive",
-    variants: variants,
-    id: "toggle-button"
+    className: isToggled ? 'shrink-button' : 'expand-button',
+    onMouseEnter: function onMouseEnter() {
+      return props.expandButton();
+    },
+    onMouseLeave: function onMouseLeave() {
+      return props.shrinkButton();
+    },
+    animate: {
+      opacity: 1
+    }
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-times-circle close-icon"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "icons"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
     id: "left-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    "class": "fas fa-angle-double-left left-arrow-icon"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "fas fa-angle-double-left"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
     id: "right-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "right-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    "class": "fas fa-angle-double-right right-arrow-icon"
-  }))) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "fas fa-angle-double-right"
+  })))) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
-  }, "Education"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Experience")));
+  }, "Education")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (EducationCard);
@@ -374,10 +443,10 @@ var EducationCard = function EducationCard(props) {
 
 /***/ }),
 
-/***/ "./frontend/components/cards/education_card_expanded.js":
-/*!**************************************************************!*\
-  !*** ./frontend/components/cards/education_card_expanded.js ***!
-  \**************************************************************/
+/***/ "./frontend/components/cards/experience_card.js":
+/*!******************************************************!*\
+  !*** ./frontend/components/cards/experience_card.js ***!
+  \******************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -385,73 +454,151 @@ var EducationCard = function EducationCard(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+// import React from "react";
+// class ExperienceCard extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.cardName = 'experience-card';
+//   }
+//   render() {
+//     return (
+//       <div
+//         onMouseEnter={() => this.props.expandCard(this.cardName)}
+//         onMouseLeave={() => this.props.shrinkCard(this.cardName)}
+//         id={this.cardName}
+//         className="cards"
+//       >
+//         <p>Experience</p>
+//       </div>
+//     );
+//   }
+// }
+// export default ExperienceCard;
+// Using hooks //
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-var EducationCardExpanded = /*#__PURE__*/function (_React$Component) {
-  _inherits(EducationCardExpanded, _React$Component);
-
-  var _super = _createSuper(EducationCardExpanded);
-
-  function EducationCardExpanded(props) {
-    var _this;
-
-    _classCallCheck(this, EducationCardExpanded);
-
-    _this = _super.call(this, props);
-    _this.cardName = 'education-card-expanded';
-    return _this;
+var variants = {
+  active: {
+    position: 'absolute',
+    height: '90vh',
+    width: '90vw',
+    top: '-45vh',
+    left: '-13vw',
+    backgroundColor: 'rgb(82, 82, 82)',
+    borderRadius: '30px',
+    // boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    boxShadow: '0px 0px 12px rgb(10,149,255)',
+    transition: '3s',
+    zIndex: '500'
+  },
+  inActive: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    borderRadius: '20px',
+    backgroundColor: 'rgb(51,51,51, 0%)',
+    borderThickness: '0px',
+    // boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    zIndex: '24',
+    transition: '3s'
   }
+};
 
-  _createClass(EducationCardExpanded, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "dim-background"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        // id={this.cardName}
-        className: this.cardName + " card-detail"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(motion.div, {
-        id: "icons"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(motion.div, {
-        id: "left-icon"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-angle-double-left left-arrow-icon"
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(motion.div, {
-        id: "right-icon"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-        "class": "fas fa-angle-double-right right-arrow-icon"
-      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: ""
-      }, "card")));
+var ExperienceCard = function ExperienceCard(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isToggled = _useState2[0],
+      setToggle = _useState2[1];
+
+  var toggleAndShrink = function toggleAndShrink(card) {
+    props.shrinkCard(card);
+    console.log(isToggled, setToggle);
+
+    if (isToggled) {
+      setToggle(!isToggled);
     }
-  }]);
+  };
 
-  return EducationCardExpanded;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    onMouseEnter: function onMouseEnter() {
+      return props.expandCard('experience-card');
+    },
+    onMouseLeave: function onMouseLeave() {
+      return toggleAndShrink('experience-card');
+    },
+    initial: {
+      opacity: 0.4
+    },
+    animate: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0.4
+    },
+    id: "experience-card",
+    className: "cards"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    animate: isToggled ? "active" : "inActive",
+    variants: variants,
+    id: "toggle-experience-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    onClick: function onClick() {
+      return setToggle(!isToggled);
+    },
+    className: isToggled ? 'shrink-button' : 'expand-button',
+    onMouseEnter: function onMouseEnter() {
+      return props.expandButton();
+    },
+    onMouseLeave: function onMouseLeave() {
+      return props.shrinkButton();
+    },
+    animate: {
+      opacity: 1
+    }
+  }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-times-circle close-icon"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "icons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
+    id: "left-icon",
+    onClick: function onClick() {
+      return clickButton('left');
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-angle-double-left"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
+    id: "right-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-angle-double-right"
+  })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "cards-text"
+  }, "Experiences")));
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (EducationCardExpanded);
+/* harmony default export */ __webpack_exports__["default"] = (ExperienceCard);
+;
 
 /***/ }),
 
@@ -519,15 +666,16 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var variants = {
   active: {
     position: 'absolute',
-    height: '85vh',
-    width: '85vw',
-    top: '-33vh',
-    left: '-37vw',
-    backgroundColor: 'rgb(82, 82, 82, 100%)',
+    height: '90vh',
+    width: '90vw',
+    top: '-37vh',
+    left: '-32vw',
+    backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
-    boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    // boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    boxShadow: '0px 0px 12px rgb(10,149,255)',
     transition: '3s',
-    zIndex: '25'
+    zIndex: '500'
   },
   inActive: {
     position: 'absolute',
@@ -560,6 +708,10 @@ var ProjectsCard = function ProjectsCard(props) {
     }
   };
 
+  var clickButton = function clickButton(dir) {
+    console.log(dir);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     onMouseEnter: function onMouseEnter() {
       return props.expandCard('projects-card');
@@ -582,25 +734,47 @@ var ProjectsCard = function ProjectsCard(props) {
     id: "projects-card",
     className: "cards"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    onClick: function onClick() {
-      return setToggle(!isToggled);
-    },
     animate: isToggled ? "active" : "inActive",
     variants: variants,
     id: "toggle-project-button"
-  }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    id: "icons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    id: "left-icon"
+    onClick: function onClick() {
+      return setToggle(!isToggled);
+    },
+    className: isToggled ? 'shrink-button' : 'expand-button',
+    onMouseEnter: function onMouseEnter() {
+      return props.expandButton();
+    },
+    onMouseLeave: function onMouseLeave() {
+      return props.shrinkButton();
+    },
+    animate: {
+      opacity: 1
+    }
+  }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    "class": "fas fa-angle-double-left left-arrow-icon"
-  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "far fa-times-circle close-icon"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "icons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
+    id: "left-icon",
+    onClick: function onClick() {
+      return clickButton('left');
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-angle-double-left"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
     id: "right-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    "class": "fas fa-angle-double-right right-arrow-icon"
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-    className: "cards-text"
-  }, "Techs"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", null, "Projects")));
+    className: "fas fa-angle-double-right"
+  })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "cards-text-projects"
+  }, "Projects")));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ProjectsCard);
@@ -608,10 +782,10 @@ var ProjectsCard = function ProjectsCard(props) {
 
 /***/ }),
 
-/***/ "./frontend/components/cards/projects_card_expanded.js":
-/*!*************************************************************!*\
-  !*** ./frontend/components/cards/projects_card_expanded.js ***!
-  \*************************************************************/
+/***/ "./frontend/components/cards/skills_card.js":
+/*!**************************************************!*\
+  !*** ./frontend/components/cards/skills_card.js ***!
+  \**************************************************/
 /*! exports provided: default */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -619,61 +793,151 @@ var ProjectsCard = function ProjectsCard(props) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+// import React from "react";
+// class SkillsCard extends React.Component {
+//   constructor(props) {
+//     super(props);
+//     this.cardName = 'skills-card';
+//   }
+//   render() {
+//     return (
+//       <div
+//         onMouseEnter={() => this.props.expandCard(this.cardName)}
+//         onMouseLeave={() => this.props.shrinkCard(this.cardName)}
+//         id={this.cardName}
+//         className="cards"
+//       >
+//         <p>Skills</p>
+//       </div>
+//     );
+//   }
+// }
+// export default SkillsCard;
+// Using hooks //
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-
-
-var ProjectsCardExpanded = /*#__PURE__*/function (_React$Component) {
-  _inherits(ProjectsCardExpanded, _React$Component);
-
-  var _super = _createSuper(ProjectsCardExpanded);
-
-  function ProjectsCardExpanded(props) {
-    var _this;
-
-    _classCallCheck(this, ProjectsCardExpanded);
-
-    _this = _super.call(this, props);
-    _this.cardName = 'projects-card-expanded';
-    return _this;
+var variants = {
+  active: {
+    position: 'absolute',
+    height: '90vh',
+    width: '90vw',
+    top: '-45vh',
+    left: '-32vw',
+    backgroundColor: 'rgb(82, 82, 82)',
+    borderRadius: '30px',
+    // boxShadow: '0px 0px 8px rgba(255, 255, 255, 100%)',
+    boxShadow: '0px 0px 12px rgb(10,149,255)',
+    transition: '3s',
+    zIndex: '500'
+  },
+  inActive: {
+    position: 'absolute',
+    height: '100%',
+    width: '100%',
+    borderRadius: '20px',
+    backgroundColor: 'rgb(51,51,51, 0%)',
+    borderThickness: '0px',
+    // boxShadow: "0px 0px 3px rgba(208, 208, 208, 70%)",
+    // display: 'flex',
+    // flexDirection: 'column',
+    // justifyContent: 'center',
+    zIndex: '24',
+    transition: '3s'
   }
+};
 
-  _createClass(ProjectsCardExpanded, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: this.cardName,
-        className: "card-detail"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
-        className: ""
-      }, "card"));
+var SkillsCard = function SkillsCard(props) {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState2 = _slicedToArray(_useState, 2),
+      isToggled = _useState2[0],
+      setToggle = _useState2[1];
+
+  var toggleAndShrink = function toggleAndShrink(card) {
+    props.shrinkCard(card);
+    console.log(isToggled, setToggle);
+
+    if (isToggled) {
+      setToggle(!isToggled);
     }
-  }]);
+  };
 
-  return ProjectsCardExpanded;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    onMouseEnter: function onMouseEnter() {
+      return props.expandCard('skills-card');
+    },
+    onMouseLeave: function onMouseLeave() {
+      return toggleAndShrink('skills-card');
+    },
+    initial: {
+      opacity: 0.4
+    },
+    animate: {
+      opacity: 1
+    },
+    exit: {
+      opacity: 0.4
+    },
+    id: "skills-card",
+    className: "cards"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    animate: isToggled ? "active" : "inActive",
+    variants: variants,
+    id: "toggle-skills-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    onClick: function onClick() {
+      return setToggle(!isToggled);
+    },
+    className: isToggled ? 'shrink-button' : 'expand-button',
+    onMouseEnter: function onMouseEnter() {
+      return props.expandButton();
+    },
+    onMouseLeave: function onMouseLeave() {
+      return props.shrinkButton();
+    },
+    animate: {
+      opacity: 1
+    }
+  }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "far fa-times-circle close-icon"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "icons"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
+    id: "left-icon",
+    onClick: function onClick() {
+      return clickButton('left');
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-angle-double-left"
+  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
+    id: "right-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "left-arrow-icon"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
+    className: "fas fa-angle-double-right"
+  })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+    className: "cards-text"
+  }, "Techs")));
+};
 
-/* harmony default export */ __webpack_exports__["default"] = (ProjectsCardExpanded);
+/* harmony default export */ __webpack_exports__["default"] = (SkillsCard);
+;
 
 /***/ }),
 

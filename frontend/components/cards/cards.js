@@ -1,8 +1,9 @@
 import React from 'react';
+import { motion, AnimatePresence } from "framer-motion";
 import EducationCard from './education_card';
-import EducationCardExpanded from './education_card_expanded';
 import ProjectsCard from './projects_card';
-import ProjectsCardExpanded from './projects_card_expanded';
+import SkillsCard from './skills_card';
+import ExperienceCard from './experience_card';
 
 class Cards extends React.Component {
   constructor(props) {
@@ -26,24 +27,51 @@ class Cards extends React.Component {
     this.props.receiveCard(cardName);
   }
 
+  expandButton() {
+    const elem = document.getElementsByClassName('shrink-button')[0];
+    console.log(document.getElementsByClassName('shrink-button'), elem);
+    if (!!elem) { elem.classList.add('shrink-button-expanded'); }
+  }
+
+  shrinkButton() {
+    const elem = document.getElementsByClassName('shrink-button')[0];
+    console.log(document.getElementsByClassName('shrink-button'), elem);
+    if (!!elem) { elem.classList.remove('shrink-button-expanded'); }
+  }
+
   render() {
-    switch (this.props.display) {
-      case 'education-card':
-        return (
-          <EducationCardExpanded />
-        );
-      case 'projects-card':
-        return (
-          <ProjectsCardExpanded />
-        );
-      default:
-        return (
-          <div className="cards-container">
-            <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></EducationCard>
-            <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></ProjectsCard>
-          </div>
-        );
-    }
+    // switch (this.props.display) {
+    //   case 'education-card':
+    //     return (
+    //       <EducationCardExpanded />
+    //     );
+    //   case 'projects-card':
+    //     return (
+    //       <ProjectsCardExpanded />
+    //     );
+    //   default:
+    //     return (
+    //       <div className="cards-container">
+    //         <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></EducationCard>
+    //         <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard}></ProjectsCard>
+    //       </div>
+    //     );
+    // }
+    return (
+      <AnimatePresence>
+        <motion.div className="cards-container">
+          <motion.div className="cards-container-left">
+            <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></EducationCard>
+            <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ExperienceCard>
+          </motion.div>
+          <motion.div className="cards-container-right">
+            <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ProjectsCard>
+            <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></SkillsCard>
+          </motion.div>
+        </motion.div>
+      </AnimatePresence>
+    );
+
   }
 }
 
