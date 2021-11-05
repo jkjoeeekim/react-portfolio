@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from 'framer-motion';
 
 class Name extends React.Component {
   constructor(props) {
@@ -42,12 +43,14 @@ class Name extends React.Component {
 
   render() {
     return (
-      <div
+      <motion.div
+        layout
         id={this.state.id}
+        transition={{ type: "spring", bounce: 1 }}
         onMouseEnter={() => this.boldLetters()}
         onMouseLeave={() => this.unboldLetters()}
       >
-        <div className="header-title">
+        <motion.div className="header-title">
           <p className="first-letters highlight letters">J</p>
           <p className="highlight letters">o</p>
           <p className="greyed-out-letters">s</p>
@@ -55,8 +58,8 @@ class Name extends React.Component {
           <p className="greyed-out-letters">ph</p>
           <p className="first-letters greyed-out-letters">S.</p>
           <p className="first-letters highlight letters">Kim</p>
-        </div>
-      </div>
+        </motion.div>
+      </motion.div>
     );
   }
 }

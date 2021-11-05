@@ -103,7 +103,9 @@ const ExperienceCard = (props) => {
             )}
           </motion.div>
           {isToggled ? (
-            <motion.div>
+            <motion.div
+              transition={{ type: "spring", bounce: 1 }}
+            >
               <motion.div id="icons">
                 <motion.button id="left-icon">
                   <motion.div className="left-arrow-icon">
