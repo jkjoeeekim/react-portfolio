@@ -265,6 +265,9 @@ var Cards = /*#__PURE__*/function (_React$Component) {
     _classCallCheck(this, Cards);
 
     _this = _super.call(this, props);
+    _this.state = {
+      display: false
+    };
     _this.showCard = _this.showCard.bind(_assertThisInitialized(_this));
     return _this;
   }
@@ -310,6 +313,8 @@ var Cards = /*#__PURE__*/function (_React$Component) {
   }, {
     key: "render",
     value: function render() {
+      var _this2 = this;
+
       // switch (this.props.display) {
       //   case 'education-card':
       //     return (
@@ -328,7 +333,38 @@ var Cards = /*#__PURE__*/function (_React$Component) {
       //     );
       // }
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "cards-container"
+        initial: {
+          opacity: 0.4
+        },
+        animate: {
+          opacity: 1
+        },
+        onMouseEnter: function onMouseEnter() {
+          return _this2.setState({
+            display: true
+          });
+        },
+        onMouseLeave: function onMouseLeave() {
+          return _this2.setState({
+            display: false
+          });
+        },
+        id: "cards-main"
+      }, this.state.display ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container",
+        initial: {
+          scale: 0,
+          rotate: -90
+        },
+        animate: {
+          y: '-175vh',
+          scale: 1,
+          rotate: 0,
+          opacity: 1
+        },
+        transition: {
+          duration: 0.5
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "cards-container-left"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_education_card__WEBPACK_IMPORTED_MODULE_2__["default"], {
@@ -361,7 +397,29 @@ var Cards = /*#__PURE__*/function (_React$Component) {
         showCard: this.showCard,
         expandButton: this.expandButton,
         shrinkButton: this.shrinkButton
-      }))));
+      })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container",
+        animate: {
+          y: 0,
+          scale: 0,
+          rotate: -90,
+          opacity: 0
+        },
+        transition: {
+          duration: 0.5
+        }
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "explore-show-cards"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+        whileHover: {
+          scale: 1.2,
+          transition: {
+            type: "spring",
+            bounce: 0.75,
+            delay: 0
+          }
+        }
+      }, "EXPLORE"))));
     }
   }]);
 
@@ -419,6 +477,10 @@ var mDTP = function mDTP(dispatch) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _education_education__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./education/education */ "./frontend/components/cards/content/education/education.js");
+/* harmony import */ var _experiences_experiences__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./experiences/experiences */ "./frontend/components/cards/content/experiences/experiences.js");
+/* harmony import */ var _projects_projects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projects/projects */ "./frontend/components/cards/content/projects/projects.js");
+/* harmony import */ var _techs_techs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./techs/techs */ "./frontend/components/cards/content/techs/techs.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -443,6 +505,10 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
+
+
+
 var Content = /*#__PURE__*/function (_React$Component) {
   _inherits(Content, _React$Component);
 
@@ -457,9 +523,27 @@ var Content = /*#__PURE__*/function (_React$Component) {
   _createClass(Content, [{
     key: "render",
     value: function render() {
+      var _this = this;
+
+      var display = function display() {
+        switch (_this.props.card) {
+          case "education":
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_education_education__WEBPACK_IMPORTED_MODULE_1__["default"], null);
+
+          case "experience":
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_experiences_experiences__WEBPACK_IMPORTED_MODULE_2__["default"], null);
+
+          case "projects":
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_projects_projects__WEBPACK_IMPORTED_MODULE_3__["default"], null);
+
+          case "skills":
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_techs_techs__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+        }
+      };
+
       return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
         id: "content"
-      }, "content");
+      }, display());
     }
   }]);
 
@@ -467,6 +551,566 @@ var Content = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Content);
+
+/***/ }),
+
+/***/ "./frontend/components/cards/content/education/education.js":
+/*!******************************************************************!*\
+  !*** ./frontend/components/cards/content/education/education.js ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Education = /*#__PURE__*/function (_React$Component) {
+  _inherits(Education, _React$Component);
+
+  var _super = _createSuper(Education);
+
+  function Education(props) {
+    _classCallCheck(this, Education);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Education, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "education-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "education-title",
+        animate: {
+          opacity: 1,
+          y: '25vh'
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "Education | studies"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "contents",
+        initial: {
+          scale: 1.15,
+          lineHeight: 3
+        },
+        animate: {
+          scale: 1,
+          y: '3vh',
+          lineHeight: 1
+        },
+        transition: {
+          delay: 2
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-first-title content-titles"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-name-majors"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: 40
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "App Academy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-majors",
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: -60
+        },
+        transition: {
+          delay: 1
+        }
+      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+        className: "content-descriptions"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -180
+        },
+        transition: {
+          delay: 1.25
+        }
+      }, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -140
+        },
+        transition: {
+          delay: 1.5
+        }
+      }, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -100
+        },
+        transition: {
+          delay: 1.75
+        }
+      }, "third point"))));
+    }
+  }]);
+
+  return Education;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Education);
+
+/***/ }),
+
+/***/ "./frontend/components/cards/content/experiences/experiences.js":
+/*!**********************************************************************!*\
+  !*** ./frontend/components/cards/content/experiences/experiences.js ***!
+  \**********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Experiences = /*#__PURE__*/function (_React$Component) {
+  _inherits(Experiences, _React$Component);
+
+  var _super = _createSuper(Experiences);
+
+  function Experiences(props) {
+    _classCallCheck(this, Experiences);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Experiences, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "experiences-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "experiences-title",
+        animate: {
+          opacity: 1,
+          y: '25vh'
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "Experiences"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "contents",
+        initial: {
+          scale: 1.15,
+          lineHeight: 3
+        },
+        animate: {
+          scale: 1,
+          y: '3vh',
+          lineHeight: 1
+        },
+        transition: {
+          delay: 2
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-first-title content-titles"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-name-majors"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: 40
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "App Academy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-majors",
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: -60
+        },
+        transition: {
+          delay: 1
+        }
+      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+        className: "content-descriptions"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -150
+        },
+        transition: {
+          delay: 1.25
+        }
+      }, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -130
+        },
+        transition: {
+          delay: 1.5
+        }
+      }, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -110
+        },
+        transition: {
+          delay: 1.75
+        }
+      }, "third point"))));
+    }
+  }]);
+
+  return Experiences;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Experiences);
+
+/***/ }),
+
+/***/ "./frontend/components/cards/content/projects/projects.js":
+/*!****************************************************************!*\
+  !*** ./frontend/components/cards/content/projects/projects.js ***!
+  \****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Projects = /*#__PURE__*/function (_React$Component) {
+  _inherits(Projects, _React$Component);
+
+  var _super = _createSuper(Projects);
+
+  function Projects(props) {
+    _classCallCheck(this, Projects);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Projects, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "projects-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "projects-title",
+        animate: {
+          opacity: 1,
+          y: '25vh'
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "contents",
+        initial: {
+          scale: 1.15,
+          lineHeight: 3
+        },
+        animate: {
+          scale: 1,
+          y: '3vh',
+          lineHeight: 1
+        },
+        transition: {
+          delay: 2
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-first-title content-titles"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-name-majors"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: 40
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "App Academy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-majors",
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: -60
+        },
+        transition: {
+          delay: 1
+        }
+      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+        className: "content-descriptions"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -150
+        },
+        transition: {
+          delay: 1.25
+        }
+      }, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -130
+        },
+        transition: {
+          delay: 1.5
+        }
+      }, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -110
+        },
+        transition: {
+          delay: 1.75
+        }
+      }, "third point"))));
+    }
+  }]);
+
+  return Projects;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Projects);
+
+/***/ }),
+
+/***/ "./frontend/components/cards/content/techs/techs.js":
+/*!**********************************************************!*\
+  !*** ./frontend/components/cards/content/techs/techs.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+
+function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+
+function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+
+function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
+
+function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+
+function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
+
+function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
+
+
+
+var Techs = /*#__PURE__*/function (_React$Component) {
+  _inherits(Techs, _React$Component);
+
+  var _super = _createSuper(Techs);
+
+  function Techs(props) {
+    _classCallCheck(this, Techs);
+
+    return _super.call(this, props);
+  }
+
+  _createClass(Techs, [{
+    key: "render",
+    value: function render() {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "techs-content"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "techs-title",
+        animate: {
+          opacity: 1,
+          y: '25vh'
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "Tech stacks | Languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "contents",
+        initial: {
+          scale: 1.15,
+          lineHeight: 3
+        },
+        animate: {
+          scale: 1,
+          y: '3vh',
+          lineHeight: 1
+        },
+        transition: {
+          delay: 2
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-first-title content-titles"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-name-majors"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: 40
+        },
+        transition: {
+          delay: 0.5
+        }
+      }, "App Academy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "content-title-majors",
+        initial: {
+          opacity: 0
+        },
+        animate: {
+          opacity: 1,
+          x: -60
+        },
+        transition: {
+          delay: 1
+        }
+      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+        className: "content-descriptions"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -150
+        },
+        transition: {
+          delay: 1.25
+        }
+      }, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -130
+        },
+        transition: {
+          delay: 1.5
+        }
+      }, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+        animate: {
+          opacity: 1,
+          x: -110
+        },
+        transition: {
+          delay: 1.75
+        }
+      }, "third point"))));
+    }
+  }]);
+
+  return Techs;
+}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+
+/* harmony default export */ __webpack_exports__["default"] = (Techs);
 
 /***/ }),
 
@@ -501,10 +1145,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var variants = {
   active: {
     position: 'absolute',
-    height: '90vh',
+    height: '87vh',
     width: '90vw',
-    top: '-37vh',
-    left: '-13vw',
+    top: '-39vh',
+    left: '-20.25vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
     border: '1px solid rgb(249, 156, 23)',
@@ -574,20 +1218,30 @@ var EducationCard = function EducationCard(props) {
       return setToggle(!isToggled);
     },
     className: isToggled ? 'shrink-button' : 'expand-button',
-    onMouseEnter: function onMouseEnter() {
-      return props.expandButton();
-    },
-    onMouseLeave: function onMouseLeave() {
-      return props.shrinkButton();
-    },
     animate: {
+      y: '-25vh',
       opacity: 1
+    },
+    transition: {
+      delay: 0.5
     }
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "close-button"
+    className: "hide-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button",
+    whileHover: {
+      scale: 1.25,
+      transition: {
+        type: "spring",
+        bounce: 0.8,
+        delay: 0
+      }
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-times-circle close-icon"
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "content-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "icons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
     id: "left-icon"
@@ -601,7 +1255,9 @@ var EducationCard = function EducationCard(props) {
     className: "right-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-angle-double-right"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], null)) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    card: "education"
+  })) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
   }, "Education")));
 };
@@ -663,10 +1319,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var variants = {
   active: {
     position: 'absolute',
-    height: '90vh',
+    height: '87vh',
     width: '90vw',
-    top: '-45vh',
-    left: '-13vw',
+    top: '-47vh',
+    left: '-20.25vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
     border: '1px solid rgb(249, 156, 23)',
@@ -732,24 +1388,33 @@ var ExperienceCard = function ExperienceCard(props) {
       return setToggle(!isToggled);
     },
     className: isToggled ? 'shrink-button' : 'expand-button',
-    onMouseEnter: function onMouseEnter() {
-      return props.expandButton();
-    },
-    onMouseLeave: function onMouseLeave() {
-      return props.shrinkButton();
-    },
     animate: {
+      y: '-25vh',
       opacity: 1
+    },
+    transition: {
+      delay: 0.5
     }
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "close-button"
+    className: "hide-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button",
+    whileHover: {
+      scale: 1.25,
+      transition: {
+        type: "spring",
+        bounce: 0.8,
+        delay: 0
+      }
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-times-circle close-icon"
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     transition: {
       type: "spring",
       bounce: 1
-    }
+    },
+    id: "content-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "icons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
@@ -764,7 +1429,9 @@ var ExperienceCard = function ExperienceCard(props) {
     className: "right-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-angle-double-right"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], null)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    card: "experience"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
   }, "Experiences")));
 };
@@ -840,10 +1507,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var variants = {
   active: {
     position: 'absolute',
-    height: '90vh',
+    height: '87vh',
     width: '90vw',
-    top: '-37vh',
-    left: '-32vw',
+    top: '-39vh',
+    left: '-39.5vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
     border: '1px solid rgb(249, 156, 23)',
@@ -916,20 +1583,30 @@ var ProjectsCard = function ProjectsCard(props) {
       return setToggle(!isToggled);
     },
     className: isToggled ? 'shrink-button' : 'expand-button',
-    onMouseEnter: function onMouseEnter() {
-      return props.expandButton();
-    },
-    onMouseLeave: function onMouseLeave() {
-      return props.shrinkButton();
-    },
     animate: {
+      y: '-25vh',
       opacity: 1
+    },
+    transition: {
+      delay: 0.5
     }
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "close-button"
+    className: "hide-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button",
+    whileHover: {
+      scale: 1.25,
+      transition: {
+        type: "spring",
+        bounce: 0.8,
+        delay: 0
+      }
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-times-circle close-icon"
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "content-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "icons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
     id: "left-icon"
@@ -943,7 +1620,9 @@ var ProjectsCard = function ProjectsCard(props) {
     className: "right-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-angle-double-right"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], null)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    card: "projects"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text-projects"
   }, "Projects")));
 };
@@ -1005,10 +1684,10 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 var variants = {
   active: {
     position: 'absolute',
-    height: '90vh',
+    height: '87vh',
     width: '90vw',
-    top: '-45vh',
-    left: '-32vw',
+    top: '-47vh',
+    left: '-39.5vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
     border: '1px solid rgb(249, 156, 23)',
@@ -1074,20 +1753,30 @@ var SkillsCard = function SkillsCard(props) {
       return setToggle(!isToggled);
     },
     className: isToggled ? 'shrink-button' : 'expand-button',
-    onMouseEnter: function onMouseEnter() {
-      return props.expandButton();
-    },
-    onMouseLeave: function onMouseLeave() {
-      return props.shrinkButton();
-    },
     animate: {
+      y: '-25vh',
       opacity: 1
+    },
+    transition: {
+      delay: 0.5
     }
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "close-button"
+    className: "hide-button"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "close-button",
+    whileHover: {
+      scale: 1.25,
+      transition: {
+        type: "spring",
+        bounce: 0.8,
+        delay: 0
+      }
+    }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-times-circle close-icon"
-  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "content-container"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "icons"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
     id: "left-icon"
@@ -1101,7 +1790,9 @@ var SkillsCard = function SkillsCard(props) {
     className: "right-arrow-icon"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "fas fa-angle-double-right"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], null)) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    card: "skills"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
   }, "Techs")));
 };
@@ -1189,26 +1880,95 @@ var Info = /*#__PURE__*/function (_React$Component) {
           });
         }
       }, this.state.display ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-area"
+        id: "contact"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
-        id: "info-text",
-        className: "infos"
-      }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
-        id: "info-text",
-        className: "infos"
-      }, "JkJosephKim@hotmail.com")) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-area"
+        whileHover: {
+          scale: 1.2,
+          transition: {
+            type: "spring",
+            bounce: 0.75
+          }
+        }
+      }, "CONTACT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "info-area",
+        transition: "0"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-text-area",
+        id: "info-text",
+        className: "infos",
+        whileHover: {
+          scale: 1.1,
+          transition: {
+            type: "spring",
+            bounce: 0.6
+          }
+        },
         animate: {
-          x: 0
+          y: '2vh'
         },
         transition: {
           delay: 0
         }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+      }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         id: "info-text",
-        className: "infos"
+        className: "infos",
+        whileHover: {
+          scale: 1.1,
+          transition: {
+            type: "spring",
+            bounce: 0.6
+          }
+        },
+        animate: {
+          y: '2vh'
+        },
+        transition: {
+          delay: 0
+        }
+      }, "JkJosephKim@hotmail.com"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "contact"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+        whileHover: {
+          scale: 1.1,
+          transition: {
+            type: "spring",
+            bounce: 0.6
+          }
+        }
+      }, "CONTACT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "info-area",
+        transition: "0"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "info-text",
+        className: "infos",
+        whileHover: {
+          scale: 1.1,
+          transition: {
+            type: "spring",
+            bounce: 0.6
+          }
+        },
+        animate: {
+          y: 0
+        },
+        transition: {
+          delay: 0
+        }
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "info-text",
+        className: "infos",
+        whileHover: {
+          scale: 1.1,
+          transition: {
+            type: "spring",
+            bounce: 0.6
+          }
+        },
+        animate: {
+          y: 0
+        },
+        transition: {
+          delay: 0
+        }
       }))));
     }
   }]);
@@ -1409,32 +2169,11 @@ var TopNav = /*#__PURE__*/function (_React$Component) {
   _createClass(TopNav, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__["motion"].div, {
-        id: "top-nav",
-        initial: {
-          opacity: 0.4
-        },
-        animate: {
-          opacity: 1
-        },
-        exit: {
-          opacity: 0.4
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__["motion"].div, {
-        id: "contact"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__["motion"].p, {
-        whileHover: {
-          scale: 1.2,
-          transition: {
-            type: "spring",
-            bounce: 0.75
-          }
-        }
-      }, "Contact")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_info__WEBPACK_IMPORTED_MODULE_2__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_3__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_info__WEBPACK_IMPORTED_MODULE_2__["default"], {
         store: this.props.store
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_name__WEBPACK_IMPORTED_MODULE_1__["default"], {
         store: this.props.store
-      })));
+      }));
     }
   }]);
 
@@ -1633,6 +2372,23 @@ var Socials = /*#__PURE__*/function (_React$Component) {
           }
         }
       }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        id: "socials-text-area",
+        animate: {
+          x: 0
+        },
+        transition: {
+          delay: 0
+        }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+        id: "socials-text",
+        whileHover: {
+          scale: 1.2,
+          transition: {
+            type: "spring",
+            bounce: 0.75
+          }
+        }
+      }, "SOCIALS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         id: "social-icons",
         animate: {
           x: '22vw'
@@ -1658,17 +2414,7 @@ var Socials = /*#__PURE__*/function (_React$Component) {
             bounce: 0.8
           }
         }
-      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "socials-text-area",
-        animate: {
-          x: 0
-        },
-        transition: {
-          delay: 0
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
-        id: "socials-text"
-      }, "SOCIALS"))));
+      }))));
     }
   }]);
 
@@ -1736,13 +2482,13 @@ var Splash = /*#__PURE__*/function (_React$Component) {
   _createClass(Splash, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_top_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_top_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
         store: this.props.store
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards_cards_container__WEBPACK_IMPORTED_MODULE_2__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_socials_socials__WEBPACK_IMPORTED_MODULE_3__["default"], {
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_socials_socials__WEBPACK_IMPORTED_MODULE_3__["default"], {
         store: this.props.store
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_about_about__WEBPACK_IMPORTED_MODULE_4__["default"], {
         store: this.props.store
-      }));
+      })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards_cards_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
   }]);
 

@@ -12,10 +12,12 @@ class Splash extends React.Component {
   render() {
     return (
       <div>
-        <Header store={this.props.store}></Header>
+        <div>
+          <Header store={this.props.store}></Header>
+          <Socials store={this.props.store}></Socials>
+          <About store={this.props.store}></About>
+        </div>
         <Cards></Cards>
-        <Socials store={this.props.store}></Socials>
-        <About store={this.props.store}></About>
       </div>
     );
   }

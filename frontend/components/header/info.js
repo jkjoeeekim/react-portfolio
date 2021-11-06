@@ -7,8 +7,7 @@ class Info extends React.Component {
     this.state = {
       display: false
     };
-
-  }
+  };
 
   render() {
     return (
@@ -19,37 +18,90 @@ class Info extends React.Component {
         onMouseEnter={() => this.setState({ display: true })}
         onMouseLeave={() => this.setState({ display: false })}
       >
+        {/* <motion.div
+          class="cursor"
+        >
+        </motion.div> */}
         {this.state.display ? (
           <motion.div
-            id="info-area"
+            id='contact'
           >
             <motion.p
-              id="info-text"
-              className="infos"
+              whileHover={{
+                scale: 1.2,
+                transition: { type: "spring", bounce: 0.75 },
+              }}
             >
-              Riverside, CA 92508
+              CONTACT
             </motion.p>
-            <motion.p
-              id="info-text"
-              className="infos"
+            <motion.div
+              id="info-area"
+              transition='0'
             >
-              JkJosephKim@hotmail.com
-            </motion.p>
+              <motion.div
+                id="info-text"
+                className="infos"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: "spring", bounce: 0.6 },
+                }}
+                animate={{ y: '2vh' }}
+                transition={{ delay: 0 }}
+              >
+                Riverside, CA 92508
+              </motion.div>
+              <motion.div
+                id="info-text"
+                className="infos"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: "spring", bounce: 0.6 },
+                }}
+                animate={{ y: '2vh' }}
+                transition={{ delay: 0 }}
+              >
+                JkJosephKim@hotmail.com
+              </motion.div>
+            </motion.div>
           </motion.div>
         ) : (
           <motion.div
-            id="info-area"
+            id='contact'
           >
-            <motion.div
-              id="info-text-area"
-              animate={{ x: 0 }}
-              transition={{ delay: 0 }}
+            <motion.p
+              whileHover={{
+                scale: 1.1,
+                transition: { type: "spring", bounce: 0.6 },
+              }}
             >
-              <motion.p
+              CONTACT
+            </motion.p>
+            <motion.div
+              id="info-area"
+              transition='0'
+            >
+              <motion.div
                 id="info-text"
                 className="infos"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: "spring", bounce: 0.6 },
+                }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0 }}
               >
-              </motion.p>
+              </motion.div>
+              <motion.div
+                id="info-text"
+                className="infos"
+                whileHover={{
+                  scale: 1.1,
+                  transition: { type: "spring", bounce: 0.6 },
+                }}
+                animate={{ y: 0 }}
+                transition={{ delay: 0 }}
+              >
+              </motion.div>
             </motion.div>
           </motion.div>
         )}

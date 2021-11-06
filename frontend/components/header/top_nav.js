@@ -11,7 +11,7 @@ class TopNav extends React.Component {
   render() {
     return (
       <AnimatePresence>
-        <motion.div
+        {/* <motion.div
           id="top-nav"
           initial={{ opacity: 0.4 }}
           animate={{ opacity: 1 }}
@@ -31,8 +31,10 @@ class TopNav extends React.Component {
           </motion.div>
           <Info store={this.props.store}></Info>
           <Name store={this.props.store}></Name>
-        </motion.div>
+        </motion.div> */}
 
+        <Info store={this.props.store}></Info>
+        <Name store={this.props.store}></Name>
       </AnimatePresence>
     );
   }

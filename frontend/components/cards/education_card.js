@@ -5,10 +5,10 @@ import Content from './content/content';
 const variants = {
   active: {
     position: 'absolute',
-    height: '90vh',
+    height: '87vh',
     width: '90vw',
-    top: '-37vh',
-    left: '-13vw',
+    top: '-39vh',
+    left: '-20.25vw',
     backgroundColor: 'rgb(82, 82, 82)',
     borderRadius: '30px',
     border: '1px solid rgb(249, 156, 23)',
@@ -65,15 +65,22 @@ const EducationCard = (props) => {
           <motion.div
             onClick={() => setToggle(!isToggled)}
             className={isToggled ? 'shrink-button' : 'expand-button'}
-            onMouseEnter={() => props.expandButton()}
-            onMouseLeave={() => props.shrinkButton()}
-            animate={{ opacity: 1 }}
+            animate={{ y: '-25vh', opacity: 1 }}
+            transition={{ delay: 0.5 }}
           >
             {isToggled ? (
               <motion.div
-                className='close-button'
+                className="hide-button"
               >
-                <i className="far fa-times-circle close-icon"></i>
+                <motion.div
+                  className='close-button'
+                  whileHover={{
+                    scale: 1.25,
+                    transition: { type: "spring", bounce: 0.8, delay: 0 },
+                  }}
+                >
+                  <i className="far fa-times-circle close-icon"></i>
+                </motion.div>
               </motion.div>
             ) : (
               <motion.div>
@@ -82,7 +89,7 @@ const EducationCard = (props) => {
             )}
           </motion.div>
           {isToggled ? (
-            <motion.div>
+            <motion.div id="content-container">
               <motion.div id="icons">
                 <motion.button id="left-icon">
                   <motion.div className="left-arrow-icon">
@@ -95,7 +102,7 @@ const EducationCard = (props) => {
                   </motion.div>
                 </motion.button>
               </motion.div>
-              <Content />
+              <Content card="education" />
             </motion.div>
           ) : (
             ''

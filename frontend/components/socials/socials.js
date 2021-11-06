@@ -66,6 +66,21 @@ class Socials extends React.Component {
         ) : (
           <motion.div>
             <motion.div
+              id="socials-text-area"
+              animate={{ x: 0 }}
+              transition={{ delay: 0 }}
+            >
+              <motion.p
+                id="socials-text"
+                whileHover={{
+                  scale: 1.2,
+                  transition: { type: "spring", bounce: 0.75 },
+                }}
+              >
+                SOCIALS
+              </motion.p>
+            </motion.div>
+            <motion.div
               id="social-icons"
               animate={{ x: '22vw' }}
               transition={{ delay: 0 }}
@@ -86,17 +101,6 @@ class Socials extends React.Component {
                 }}
               >
               </motion.div>
-            </motion.div>
-            <motion.div
-              id="socials-text-area"
-              animate={{ x: 0 }}
-              transition={{ delay: 0 }}
-            >
-              <motion.p
-                id="socials-text"
-              >
-                SOCIALS
-              </motion.p>
             </motion.div>
           </motion.div>
         )}

@@ -8,6 +8,9 @@ import ExperienceCard from './experience_card';
 class Cards extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      display: false
+    };
 
     this.showCard = this.showCard.bind(this);
   }
@@ -59,14 +62,54 @@ class Cards extends React.Component {
     // }
     return (
       <AnimatePresence>
-        <motion.div className="cards-container">
-          <motion.div className="cards-container-left">
-            <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></EducationCard>
-            <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ExperienceCard>
-          </motion.div>
-          <motion.div className="cards-container-right">
-            <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ProjectsCard>
-            <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></SkillsCard>
+        <motion.div
+          initial={{ opacity: 0.4 }}
+          animate={{ opacity: 1 }}
+          onMouseEnter={() => this.setState({ display: true })}
+          onMouseLeave={() => this.setState({ display: false })}
+          id="cards-main"
+        >
+          {this.state.display ? (
+            <motion.div
+            >
+              <motion.div
+                className="cards-container"
+                initial={{ scale: 0, rotate: -90 }}
+                animate={{ y: '-175vh', scale: 1, rotate: 0, opacity: 1 }}
+                transition={{ duration: 0.5 }}
+              >
+                <motion.div
+                  className="cards-container-left"
+                >
+                  <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></EducationCard>
+                  <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ExperienceCard>
+                </motion.div>
+                <motion.div className="cards-container-right">
+                  <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ProjectsCard>
+                  <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></SkillsCard>
+                </motion.div>
+              </motion.div>
+            </motion.div>
+          ) : (
+            <motion.div>
+              <motion.div
+                className="cards-container"
+                animate={{ y: 0, scale: 0, rotate: -90, opacity: 0 }}
+                transition={{ duration: 0.5 }}
+              ></motion.div>
+            </motion.div>
+          )}
+          <motion.div
+            id="explore-show-cards"
+          >
+            <motion.p
+              whileHover={{
+                scale: 1.2,
+                transition: { type: "spring", bounce: 0.75, delay: 0 },
+              }}
+            >
+              EXPLORE
+            </motion.p>
           </motion.div>
         </motion.div>
       </AnimatePresence>
