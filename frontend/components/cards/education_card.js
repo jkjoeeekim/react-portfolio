@@ -66,7 +66,7 @@ const EducationCard = (props) => {
             onClick={() => setToggle(!isToggled)}
             className={isToggled ? 'shrink-button' : 'expand-button'}
             animate={{ y: '-25vh', opacity: 1 }}
-            transition={{ delay: 0.5 }}
+            transition={{ delay: 0 }}
           >
             {isToggled ? (
               <motion.div
@@ -84,7 +84,7 @@ const EducationCard = (props) => {
               </motion.div>
             ) : (
               <motion.div>
-
+                <Content card="empty" />
               </motion.div>
             )}
           </motion.div>

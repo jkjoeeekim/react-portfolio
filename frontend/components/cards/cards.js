@@ -73,8 +73,8 @@ class Cards extends React.Component {
             <motion.div
               className="cards-container"
               initial={{ scale: 0, rotate: -90 }}
-              animate={{ y: '-100vh', scale: 1, rotate: 0, opacity: 1 }}
-              transition={{ duration: 0.5, delay: 0 }}
+              animate={{ y: '-50vh', scale: 1, rotate: 0, opacity: 1 }}
+              transition={{ delay: 0 }}
             >
               <motion.div
                 className="cards-container-left"
@@ -90,8 +90,8 @@ class Cards extends React.Component {
           ) : (
             <motion.div
               className="cards-container"
-              animate={{ y: 0, scale: 0, rotate: -90, opacity: 0.7 }}
-              transition={{ duration: 0.5, delay: 0 }}
+              animate={{ y: 0, scale: 0.1, rotate: -45, opacity: 0.5 }}
+              transition={{ delay: 0 }}
             >
               <motion.div
                 className="cards-container-left"

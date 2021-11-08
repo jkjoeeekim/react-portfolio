@@ -46,8 +46,8 @@ class Info extends React.Component {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: '56.5vh' }}
-                transition={{ duration: 0.5, delay: 0 }}
+                animate={{ y: '26.5vh' }}
+                transition={{ delay: 0 }}
               >
                 Riverside, CA 92508
               </motion.div>
@@ -58,8 +58,8 @@ class Info extends React.Component {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: '56.5vh' }}
-                transition={{ duration: 0.5, delay: 0 }}
+                animate={{ y: '26.5vh' }}
+                transition={{ delay: 0 }}
               >
                 JkJosephKim@hotmail.com
               </motion.div>
@@ -89,8 +89,8 @@ class Info extends React.Component {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
+                animate={{ y: 0, scale: 0.2, opacity: 0.4 }}
+                transition={{ delay: 0 }}
               >
                 Riverside, CA 92508
               </motion.div>
@@ -101,8 +101,8 @@ class Info extends React.Component {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: 0 }}
-                transition={{ duration: 0.5, delay: 0 }}
+                animate={{ y: 0, scale: 0.2, opacity: 0.4 }}
+                transition={{ delay: 0 }}
               >
                 JkJosephKim@hotmail.com
               </motion.div>

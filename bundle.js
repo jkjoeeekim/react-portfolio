@@ -357,13 +357,12 @@ var Cards = /*#__PURE__*/function (_React$Component) {
           rotate: -90
         },
         animate: {
-          y: '-100vh',
+          y: '-50vh',
           scale: 1,
           rotate: 0,
           opacity: 1
         },
         transition: {
-          duration: 0.5,
           delay: 0
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -402,12 +401,11 @@ var Cards = /*#__PURE__*/function (_React$Component) {
         className: "cards-container",
         animate: {
           y: 0,
-          scale: 0,
-          rotate: -90,
-          opacity: 0.7
+          scale: 0.1,
+          rotate: -45,
+          opacity: 0.5
         },
         transition: {
-          duration: 0.5,
           delay: 0
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -515,6 +513,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _experiences_experiences__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./experiences/experiences */ "./frontend/components/cards/content/experiences/experiences.js");
 /* harmony import */ var _projects_projects__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./projects/projects */ "./frontend/components/cards/content/projects/projects.js");
 /* harmony import */ var _techs_techs__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./techs/techs */ "./frontend/components/cards/content/techs/techs.js");
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -536,6 +535,7 @@ function _assertThisInitialized(self) { if (self === void 0) { throw new Referen
 function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
 
 function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+
 
 
 
@@ -572,6 +572,11 @@ var Content = /*#__PURE__*/function (_React$Component) {
 
           case "skills":
             return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_techs_techs__WEBPACK_IMPORTED_MODULE_4__["default"], null);
+
+          case "empty":
+            return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_5__["motion"].div, {
+              id: "empty-content"
+            });
         }
       };
 
@@ -691,7 +696,7 @@ var Education = /*#__PURE__*/function (_React$Component) {
         transition: {
           delay: 1
         }
-      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+      }, "Computer Software Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
         className: "content-descriptions"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
         animate: {
@@ -1257,7 +1262,7 @@ var EducationCard = function EducationCard(props) {
       opacity: 1
     },
     transition: {
-      delay: 0.5
+      delay: 0
     }
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "hide-button"
@@ -1273,7 +1278,9 @@ var EducationCard = function EducationCard(props) {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-times-circle close-icon"
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    card: "empty"
+  }))), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "content-container"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "icons"
@@ -1938,10 +1945,9 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: '56.5vh'
+          y: '26.5vh'
         },
         transition: {
-          duration: 0.5,
           delay: 0
         }
       }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1955,10 +1961,9 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: '56.5vh'
+          y: '26.5vh'
         },
         transition: {
-          duration: 0.5,
           delay: 0
         }
       }, "JkJosephKim@hotmail.com"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -1989,10 +1994,11 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: 0
+          y: 0,
+          scale: 0.2,
+          opacity: 0.4
         },
         transition: {
-          duration: 0.5,
           delay: 0
         }
       }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -2006,10 +2012,11 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: 0
+          y: 0,
+          scale: 0.2,
+          opacity: 0.4
         },
         transition: {
-          duration: 0.5,
           delay: 0
         }
       }, "JkJosephKim@hotmail.com"))));

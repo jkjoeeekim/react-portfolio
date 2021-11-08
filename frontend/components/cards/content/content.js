@@ -3,6 +3,7 @@ import Education from './education/education';
 import Experiences from './experiences/experiences';
 import Projects from './projects/projects';
 import Techs from './techs/techs';
+import { motion } from 'framer-motion';
 
 class Content extends React.Component {
   constructor(props) {
@@ -20,6 +21,8 @@ class Content extends React.Component {
           return (<Projects></Projects>);
         case "skills":
           return (<Techs></Techs>);
+        case "empty":
+          return (<motion.div id="empty-content"></motion.div>);
       }
     };
 

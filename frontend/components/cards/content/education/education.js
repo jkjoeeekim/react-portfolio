@@ -44,7 +44,7 @@ class Education extends React.Component {
                 animate={{ opacity: 1, x: -60 }}
                 transition={{ delay: 1 }}
               >
-                Computer Sofware Engineering
+                Computer Software Engineering
               </motion.div>
             </motion.div>
           </motion.div>
