@@ -25,6 +25,7 @@ class Info extends React.Component {
         {this.state.display ? (
           <motion.div
             id='contact'
+            transition='0'
           >
             <motion.p
               whileHover={{
@@ -39,26 +40,26 @@ class Info extends React.Component {
               transition='0'
             >
               <motion.div
-                id="info-text"
-                className="infos"
+                className="infos info-text"
+                id='contact-address'
                 whileHover={{
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: '2vh' }}
-                transition={{ delay: 0 }}
+                animate={{ y: '56.5vh' }}
+                transition={{ duration: 0.5, delay: 0 }}
               >
                 Riverside, CA 92508
               </motion.div>
               <motion.div
-                id="info-text"
-                className="infos"
+                className="infos info-text"
+                id='contact-email'
                 whileHover={{
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: '2vh' }}
-                transition={{ delay: 0 }}
+                animate={{ y: '56.5vh' }}
+                transition={{ duration: 0.5, delay: 0 }}
               >
                 JkJosephKim@hotmail.com
               </motion.div>
@@ -67,6 +68,7 @@ class Info extends React.Component {
         ) : (
           <motion.div
             id='contact'
+            transition={{ type: 'spring', bounce: 0.75 }}
           >
             <motion.p
               whileHover={{
@@ -81,26 +83,28 @@ class Info extends React.Component {
               transition='0'
             >
               <motion.div
-                id="info-text"
-                className="infos"
+                className="infos info-text"
+                id="contact-address"
                 whileHover={{
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
                 animate={{ y: 0 }}
-                transition={{ delay: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
               >
+                Riverside, CA 92508
               </motion.div>
               <motion.div
-                id="info-text"
-                className="infos"
+                className="infos info-text"
+                id="contact-email"
                 whileHover={{
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
                 animate={{ y: 0 }}
-                transition={{ delay: 0 }}
+                transition={{ duration: 0.5, delay: 0 }}
               >
+                JkJosephKim@hotmail.com
               </motion.div>
             </motion.div>
           </motion.div>

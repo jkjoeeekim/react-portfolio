@@ -350,20 +350,21 @@ var Cards = /*#__PURE__*/function (_React$Component) {
           });
         },
         id: "cards-main"
-      }, this.state.display ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+      }, this.state.display ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "cards-container",
         initial: {
           scale: 0,
           rotate: -90
         },
         animate: {
-          y: '-175vh',
+          y: '-100vh',
           scale: 1,
           rotate: 0,
           opacity: 1
         },
         transition: {
-          duration: 0.5
+          duration: 0.5,
+          delay: 0
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "cards-container-left"
@@ -397,18 +398,51 @@ var Cards = /*#__PURE__*/function (_React$Component) {
         showCard: this.showCard,
         expandButton: this.expandButton,
         shrinkButton: this.shrinkButton
-      })))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+      }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "cards-container",
         animate: {
           y: 0,
           scale: 0,
           rotate: -90,
-          opacity: 0
+          opacity: 0.7
         },
         transition: {
-          duration: 0.5
+          duration: 0.5,
+          delay: 0
         }
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container-left"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_education_card__WEBPACK_IMPORTED_MODULE_2__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_experience_card__WEBPACK_IMPORTED_MODULE_5__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "cards-container-right"
+      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_projects_card__WEBPACK_IMPORTED_MODULE_3__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_skills_card__WEBPACK_IMPORTED_MODULE_4__["default"], {
+        store: this.props.store,
+        expandCard: this.expandCard,
+        shrinkCard: this.shrinkCard,
+        showCard: this.showCard,
+        expandButton: this.expandButton,
+        shrinkButton: this.shrinkButton
+      }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         id: "explore-show-cards"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
         whileHover: {
@@ -1880,7 +1914,8 @@ var Info = /*#__PURE__*/function (_React$Component) {
           });
         }
       }, this.state.display ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "contact"
+        id: "contact",
+        transition: "0"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
         whileHover: {
           scale: 1.2,
@@ -1893,8 +1928,8 @@ var Info = /*#__PURE__*/function (_React$Component) {
         id: "info-area",
         transition: "0"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-text",
-        className: "infos",
+        className: "infos info-text",
+        id: "contact-address",
         whileHover: {
           scale: 1.1,
           transition: {
@@ -1903,14 +1938,15 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: '2vh'
+          y: '56.5vh'
         },
         transition: {
+          duration: 0.5,
           delay: 0
         }
       }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-text",
-        className: "infos",
+        className: "infos info-text",
+        id: "contact-email",
         whileHover: {
           scale: 1.1,
           transition: {
@@ -1919,13 +1955,18 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: '2vh'
+          y: '56.5vh'
         },
         transition: {
+          duration: 0.5,
           delay: 0
         }
       }, "JkJosephKim@hotmail.com"))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "contact"
+        id: "contact",
+        transition: {
+          type: 'spring',
+          bounce: 0.75
+        }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
         whileHover: {
           scale: 1.1,
@@ -1938,8 +1979,8 @@ var Info = /*#__PURE__*/function (_React$Component) {
         id: "info-area",
         transition: "0"
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-text",
-        className: "infos",
+        className: "infos info-text",
+        id: "contact-address",
         whileHover: {
           scale: 1.1,
           transition: {
@@ -1951,11 +1992,12 @@ var Info = /*#__PURE__*/function (_React$Component) {
           y: 0
         },
         transition: {
+          duration: 0.5,
           delay: 0
         }
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "info-text",
-        className: "infos",
+      }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+        className: "infos info-text",
+        id: "contact-email",
         whileHover: {
           scale: 1.1,
           transition: {
@@ -1967,9 +2009,10 @@ var Info = /*#__PURE__*/function (_React$Component) {
           y: 0
         },
         transition: {
+          duration: 0.5,
           delay: 0
         }
-      }))));
+      }, "JkJosephKim@hotmail.com"))));
     }
   }]);
 

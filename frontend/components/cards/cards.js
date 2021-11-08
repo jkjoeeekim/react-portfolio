@@ -71,32 +71,38 @@ class Cards extends React.Component {
         >
           {this.state.display ? (
             <motion.div
+              className="cards-container"
+              initial={{ scale: 0, rotate: -90 }}
+              animate={{ y: '-100vh', scale: 1, rotate: 0, opacity: 1 }}
+              transition={{ duration: 0.5, delay: 0 }}
             >
               <motion.div
-                className="cards-container"
-                initial={{ scale: 0, rotate: -90 }}
-                animate={{ y: '-175vh', scale: 1, rotate: 0, opacity: 1 }}
-                transition={{ duration: 0.5 }}
+                className="cards-container-left"
               >
-                <motion.div
-                  className="cards-container-left"
-                >
-                  <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></EducationCard>
-                  <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ExperienceCard>
-                </motion.div>
-                <motion.div className="cards-container-right">
-                  <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ProjectsCard>
-                  <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></SkillsCard>
-                </motion.div>
+                <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></EducationCard>
+                <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ExperienceCard>
+              </motion.div>
+              <motion.div className="cards-container-right">
+                <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ProjectsCard>
+                <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></SkillsCard>
               </motion.div>
             </motion.div>
           ) : (
-            <motion.div>
+            <motion.div
+              className="cards-container"
+              animate={{ y: 0, scale: 0, rotate: -90, opacity: 0.7 }}
+              transition={{ duration: 0.5, delay: 0 }}
+            >
               <motion.div
-                className="cards-container"
-                animate={{ y: 0, scale: 0, rotate: -90, opacity: 0 }}
-                transition={{ duration: 0.5 }}
-              ></motion.div>
+                className="cards-container-left"
+              >
+                <EducationCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></EducationCard>
+                <ExperienceCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ExperienceCard>
+              </motion.div>
+              <motion.div className="cards-container-right">
+                <ProjectsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></ProjectsCard>
+                <SkillsCard store={this.props.store} expandCard={this.expandCard} shrinkCard={this.shrinkCard} showCard={this.showCard} expandButton={this.expandButton} shrinkButton={this.shrinkButton}></SkillsCard>
+              </motion.div>
             </motion.div>
           )}
           <motion.div
