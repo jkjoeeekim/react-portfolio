@@ -589,6 +589,18 @@ html {
   /* box-shadow: 0px 0px 12px rgb(10,149,255); */
 }
 
+.all-contents {
+  overflow: scroll;
+  height: 96%;
+  width: 98%;
+  position: relative;
+  top: 20%;
+  left: 1%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
 .contents {
   /* height: 100%;
   position: relative;
@@ -597,17 +609,23 @@ html {
   display: flex;
   flex-direction: column;
   justify-content: center; */
-  height: 90%;
-  width: 95%;
-  position: relative;
-  margin-top: 8%;
-  margin-left: 2.5%;
+  height: 40vh;
+  width: 90%;
   background-color: rgb(41,41,41, 68%);
+  position: relative;
+  padding-top: 7%;
+  margin-top: 50vh;
+  margin-bottom: 30vh;
+  margin-left: 5%;
   opacity: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
   border-radius: 20px;
+}
+
+.first-content {
+  margin-top: 6%;
 }
 
 .content-descriptions {
@@ -628,6 +646,14 @@ html {
   text-shadow: none;
   font-weight: 300;
   margin-left: 10vw;
+}
+
+.content-descriptions .content-description-dates {
+  font-size: 2.7vh;
+  /* color: rgb(10,149,255); */
+  color: #ED2938;
+  letter-spacing: 3px;
+  font-weight: 600;
 }
 
 #education-content {

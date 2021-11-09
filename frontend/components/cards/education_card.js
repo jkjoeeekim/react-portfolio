@@ -90,9 +90,9 @@ const EducationCard = (props) => {
           </motion.div>
           {isToggled ? (
             <motion.div id="content-container">
-              <motion.div id="icons">
+              {/* <motion.div id="icons">
                 <motion.button id="left-icon">
-                  <motion.div className="left-arrow-icon">
+                  <motion.div className="left-arrow-icon" onClick={() => window.scrollTo(0, 1500)}>
                     <i className="fas fa-angle-double-left"></i>
                   </motion.div>
                 </motion.button>
@@ -101,7 +101,7 @@ const EducationCard = (props) => {
                     <i className="fas fa-angle-double-right"></i>
                   </motion.div>
                 </motion.button>
-              </motion.div>
+              </motion.div> */}
               <Content card="education" />
             </motion.div>
           ) : (
