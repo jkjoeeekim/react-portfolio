@@ -254,7 +254,7 @@ html {
   justify-content: center !important;
   border: 3px solid rgb(249,156,23);
   cursor: pointer !important;
-  background-image: url(./frontend/assets/super_wario.gif);
+  background-image: url(./frontend/assets/edu_gif.gif);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -643,6 +643,9 @@ html {
 
 .last-content {
   margin-bottom: 12vh;
+  font-size: 2.5vh;
+  padding-top: 4%;
+  padding-bottom: 3%;
 }
 
 .content-descriptions {
@@ -663,6 +666,11 @@ html {
   text-shadow: none;
   font-weight: 300;
   margin-left: 10vw;
+}
+
+.last-content .content-descriptions {
+  height: auto;
+  padding: 2vh 0 4vh 0;
 }
 
 .content-descriptions .content-description-dates {
@@ -844,6 +852,13 @@ html {
   font-size: 3vh;
 }
 
+.last-content .content-titles {
+  font-size: 3vh;
+}
+
+.last-content .content-title-majors {
+  font-size: 2.75vh;
+}
 /* <----  End   ----> */
 
 /* About me settings */
