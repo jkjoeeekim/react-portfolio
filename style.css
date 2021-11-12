@@ -317,7 +317,7 @@ html {
   flex-direction: column !important;
   justify-content: center !important;
   cursor: pointer !important;
-  background-image: url(./frontend/assets/super_wario.gif);
+  background-image: url(./frontend/assets/exp_gif.gif);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -330,6 +330,14 @@ html {
 }
 
 #projects-card-cards-hovered p {
+  display: none;
+}
+
+#experience-card-cards-hovered p {
+  display: none;
+}
+
+#skills-card-cards-hovered p {
   display: none;
 }
 

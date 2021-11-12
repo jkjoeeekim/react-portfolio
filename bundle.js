@@ -2111,8 +2111,8 @@ var Experiences = function Experiences() {
     },
     transition: {
       delay: 0
-    } // data-tip='Mouse scroll to navigate'
-
+    },
+    "data-tip": "Mouse scroll to navigate"
   }, content1, content2, content3, content4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
     delayShow: 1000,
     scrollHide: true,
@@ -2572,7 +2572,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
-/* harmony import */ var _content_content__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./content/content */ "./frontend/components/cards/content/content.js");
+/* harmony import */ var react_tooltip__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-tooltip */ "./node_modules/react-tooltip/dist/index.es.js");
+/* harmony import */ var _content_content__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./content/content */ "./frontend/components/cards/content/content.js");
 function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
 function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
@@ -2606,6 +2607,7 @@ function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 // }
 // export default ExperienceCard;
 // Using hooks //
+
 
 
 
@@ -2654,6 +2656,11 @@ var ExperienceCard = function ExperienceCard(props) {
     }
   };
 
+  var toggleTooltip = function toggleTooltip() {
+    react_tooltip__WEBPACK_IMPORTED_MODULE_2__["default"].hide();
+    setToggle(!isToggled);
+  };
+
   return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["AnimatePresence"], null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     onMouseEnter: function onMouseEnter() {
       return props.expandCard('experience-card');
@@ -2678,7 +2685,7 @@ var ExperienceCard = function ExperienceCard(props) {
     id: "toggle-experience-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     onClick: function onClick() {
-      return setToggle(!isToggled);
+      return toggleTooltip();
     },
     className: isToggled ? 'shrink-button' : 'expand-button',
     animate: {
@@ -2687,7 +2694,9 @@ var ExperienceCard = function ExperienceCard(props) {
     },
     transition: {
       delay: 0.5
-    }
+    },
+    "data-tip": "Click to toggle",
+    cursor: "pointer"
   }, isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "hide-button"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
@@ -2702,15 +2711,20 @@ var ExperienceCard = function ExperienceCard(props) {
     }
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
     className: "far fa-times-circle close-icon"
-  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_3__["default"], {
     card: "empty"
   }))), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "content-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_3__["default"], {
     card: "experience"
   })) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
-  }, "Experiences")));
+  }, "Experiences")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    delayShow: 1000,
+    scrollHide: true,
+    resizeHide: true,
+    clickable: true
+  }));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (ExperienceCard);
