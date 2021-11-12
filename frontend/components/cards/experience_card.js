@@ -105,16 +105,13 @@ const ExperienceCard = (props) => {
               </motion.div>
             ) : (
               <motion.div>
-
+                <Content card="empty" />
               </motion.div>
             )}
           </motion.div>
           {isToggled ? (
-            <motion.div
-              transition={{ type: "spring", bounce: 1 }}
-              id="content-container"
-            >
-              <motion.div id="icons">
+            <motion.div id="content-container">
+              {/* <motion.div id="icons">
                 <motion.button id="left-icon">
                   <motion.div className="left-arrow-icon">
                     <i className="fas fa-angle-double-left"></i>
@@ -125,11 +122,11 @@ const ExperienceCard = (props) => {
                     <i className="fas fa-angle-double-right"></i>
                   </motion.div>
                 </motion.button>
-              </motion.div>
+              </motion.div> */}
               <Content card="experience" />
             </motion.div>
           ) : (
-            <div></div>
+            ''
           )}
         </motion.div>
         <p className="cards-text">Experiences</p>

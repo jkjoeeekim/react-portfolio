@@ -7,6 +7,7 @@ const Education = (props) => {
   const [scrollY, setScrollY] = useState(0);
   const [scrolling, setScrolling] = useState(false);
   const [animating, animate] = useState(false);
+  const myRef = useRef(null);
 
   const [ref1, inView1] = useInView();
   const [ref2, inView2] = useInView();
@@ -442,8 +443,6 @@ const Education = (props) => {
     </motion.div>
   );
 
-  const myRef = useRef(null);
-
   const handleScroll = () => {
     ReactTooltip.hide();
     if (scrolling) {
@@ -488,12 +487,6 @@ const Education = (props) => {
             transform: 'scale(0.8)',
             easing: 'ease-in-out',
           }, 850);
-          // setTimeout(() => {
-          //   contentBox.animate({
-          //     transform: 'scale(1.04)',
-          //     easing: 'ease-in-out',
-          //   }, 300);
-          // }, 400);
           if (!!document.getElementById(`edu-content-${(Math.floor(scrollY / 2225)) + 1}`)) {
             document.getElementById(`edu-content-${(Math.floor(scrollY / 2225)) + 1}`).animate({
               transform: 'scale(1.15)',

@@ -456,7 +456,7 @@ html {
   height: 100%;
   z-index: 24;
   color: red;
-  cursor: default;
+  cursor: none;
 }
 
 #toggle-skills-button {
