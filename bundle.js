@@ -1593,7 +1593,7 @@ var Experiences = function Experiences() {
     transition: {
       delay: 2
     }
-  }, "Designed an electronic-cigarette on SolidWorks/AutoCAD to accept a standard 18650 li-ion battery. Contructed of highly conductive copper alloy 110"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+  }, "Designed an electronic-cigarette on SolidWorks/AutoCAD to accept a standard 18650 li-ion battery, contructed of highly conductive copper alloy 110"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
     animate: {
       opacity: 1,
       x: -200

@@ -152,7 +152,7 @@ const Experiences = () => {
           <motion.li
             animate={{ opacity: 1, x: -200 }}
             transition={{ delay: 2 }}
-          >Designed an electronic-cigarette on SolidWorks/AutoCAD to accept a standard 18650 li-ion battery. Contructed of highly conductive copper alloy 110</motion.li>
+          >Designed an electronic-cigarette on SolidWorks/AutoCAD to accept a standard 18650 li-ion battery, contructed of highly conductive copper alloy 110</motion.li>
           <motion.li
             animate={{ opacity: 1, x: -200 }}
             transition={{ delay: 2.15 }}
