@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import ReactTooltip from 'react-tooltip';
 import Content from './content/content';
 
 const variants = {
@@ -43,6 +44,11 @@ const EducationCard = (props) => {
     }
   };
 
+  const toggleTooltip = () => {
+    ReactTooltip.hide();
+    setToggle(!isToggled);
+  };
+
   return (
     <AnimatePresence>
       <motion.div
@@ -63,10 +69,12 @@ const EducationCard = (props) => {
           id='toggle-education-button'
         >
           <motion.div
-            onClick={() => setToggle(!isToggled)}
+            onClick={() => toggleTooltip()}
             className={isToggled ? 'shrink-button' : 'expand-button'}
             animate={{ y: '-25vh', opacity: 1 }}
             transition={{ delay: 0 }}
+            data-tip='Click to toggle'
+            cursor='pointer'
           >
             {isToggled ? (
               <motion.div
@@ -110,6 +118,7 @@ const EducationCard = (props) => {
         </motion.div>
         <p className="cards-text">Education</p>
       </motion.div>
+      <ReactTooltip delayShow={1000} scrollHide={true} resizeHide={true} clickable={true} />
     </AnimatePresence>
   );
 };

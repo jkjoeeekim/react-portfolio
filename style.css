@@ -446,6 +446,7 @@ html {
   height: 100%;
   z-index: 24;
   color: red;
+  cursor: default;
 }
 
 #toggle-project-button {
@@ -455,6 +456,7 @@ html {
   height: 100%;
   z-index: 24;
   color: red;
+  cursor: default;
 }
 
 #toggle-skills-button {
@@ -464,6 +466,7 @@ html {
   height: 100%;
   z-index: 24;
   color: red;
+  cursor: default;
 }
 
 #toggle-experience-button {
@@ -473,6 +476,7 @@ html {
   height: 100%;
   z-index: 24;
   color: red;
+  cursor: default;
 }
 
 #new-container {

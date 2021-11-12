@@ -1,6 +1,7 @@
 import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from "react-intersection-observer";
+import ReactTooltip from 'react-tooltip';
 
 const Education = (props) => {
   const [scrollY, setScrollY] = useState(0);
@@ -444,6 +445,7 @@ const Education = (props) => {
   const myRef = useRef(null);
 
   const handleScroll = () => {
+    ReactTooltip.hide();
     if (scrolling) {
       myRef.current.scrollTop = scrollY;
     } else if (((scrollY < myRef.current.scrollTop) && (scrollY < ((allContents.length - 1) * 2225)))) {
@@ -464,6 +466,10 @@ const Education = (props) => {
       scrollProgressBar('up');
     } else {
       myRef.current.scrollTop = scrollY;
+      document.getElementById(`scroll-${(Math.floor(scrollY / 2225)) + 1}`).animate({
+        transform: 'scale(1.1)',
+        easing: 'ease-in-out',
+      }, 400);
     }
   };
 
@@ -476,7 +482,18 @@ const Education = (props) => {
     switch (dir) {
       case 'down':
         if (!!document.getElementById(`scroll-${(Math.floor(scrollY / 2225)) + 2}`)) {
-          document.getElementById(`scroll-${(Math.floor(scrollY / 2225)) + 2}`).classList.add('scrolled');
+          const contentBox = document.getElementById(`scroll-${(Math.floor(scrollY / 2225)) + 2}`);
+          contentBox.classList.add('scrolled');
+          contentBox.animate({
+            transform: 'scale(0.8)',
+            easing: 'ease-in-out',
+          }, 850);
+          // setTimeout(() => {
+          //   contentBox.animate({
+          //     transform: 'scale(1.04)',
+          //     easing: 'ease-in-out',
+          //   }, 300);
+          // }, 400);
           if (!!document.getElementById(`edu-content-${(Math.floor(scrollY / 2225)) + 1}`)) {
             document.getElementById(`edu-content-${(Math.floor(scrollY / 2225)) + 1}`).animate({
               transform: 'scale(1.15)',
@@ -511,6 +528,13 @@ const Education = (props) => {
         }
         return;
     }
+  };
+
+  const toggleTooltip = () => {
+    ReactTooltip.hide();
+    setTimeout(() => {
+      ReactTooltip.show(myRef);
+    }, 2000);
   };
 
   return (
@@ -561,15 +585,17 @@ const Education = (props) => {
         className="all-contents"
         id="all-content"
         ref={myRef}
-        onClick={() => console.log(document.getElementsByClassName('all-contents')[0].scrollHeight)}
+        onClick={() => toggleTooltip()}
         onScroll={() => handleScroll()}
         transition={{ delay: 0 }}
+        data-tip='Mouse scroll to navigate'
       >
         {content1}
         {content2}
         {content3}
         {content4}
       </motion.div>
+      <ReactTooltip delayShow={1000} scrollHide={true} resizeHide={true} clickable={true} />
     </motion.div>
   );
 };
