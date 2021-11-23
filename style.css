@@ -275,7 +275,7 @@ html {
   flex-direction: column !important;
   justify-content: center !important;
   cursor: pointer !important;
-  background-image: url(./frontend/assets/super_wario.gif);
+  /* background-image: url(./frontend/assets/super_wario.gif); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -296,7 +296,7 @@ html {
   flex-direction: column !important;
   justify-content: center !important;
   cursor: pointer !important;
-  background-image: url(./frontend/assets/super_wario.gif);
+  /* background-image: url(./frontend/assets/super_wario.gif); */
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center center;
@@ -464,7 +464,7 @@ html {
   height: 100%;
   z-index: 24;
   color: red;
-  cursor: none;
+  cursor: default;
 }
 
 #toggle-skills-button {

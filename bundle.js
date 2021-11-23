@@ -2137,129 +2137,767 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
+/* harmony import */ var react_tooltip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-tooltip */ "./node_modules/react-tooltip/dist/index.es.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
-var Projects = /*#__PURE__*/function (_React$Component) {
-  _inherits(Projects, _React$Component);
 
-  var _super = _createSuper(Projects);
 
-  function Projects(props) {
-    _classCallCheck(this, Projects);
+var Projects = function Projects() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      scrollY = _useState2[0],
+      setScrollY = _useState2[1];
 
-    return _super.call(this, props);
-  }
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      scrolling = _useState4[0],
+      setScrolling = _useState4[1];
 
-  _createClass(Projects, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "projects-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "projects-title",
-        animate: {
-          opacity: 1,
-          y: '25vh'
-        },
-        transition: {
-          delay: 0.5
-        }
-      }, "Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "contents",
-        initial: {
-          scale: 1.15,
-          lineHeight: 3
-        },
-        animate: {
-          scale: 1,
-          y: '3vh',
-          lineHeight: 1
-        },
-        transition: {
-          delay: 2
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "content-first-title content-titles"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "content-title-name-majors"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        initial: {
-          opacity: 0
-        },
-        animate: {
-          opacity: 1,
-          x: 40
-        },
-        transition: {
-          delay: 0.5
-        }
-      }, "App Academy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "content-title-majors",
-        initial: {
-          opacity: 0
-        },
-        animate: {
-          opacity: 1,
-          x: -60
-        },
-        transition: {
-          delay: 1
-        }
-      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
-        className: "content-descriptions"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
-        animate: {
-          opacity: 1,
-          x: -150
-        },
-        transition: {
-          delay: 1.25
-        }
-      }, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
-        animate: {
-          opacity: 1,
-          x: -130
-        },
-        transition: {
-          delay: 1.5
-        }
-      }, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
-        animate: {
-          opacity: 1,
-          x: -110
-        },
-        transition: {
-          delay: 1.75
-        }
-      }, "third point"))));
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      animating = _useState6[0],
+      animate = _useState6[1];
+
+  var myRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useInView = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])(),
+      _useInView2 = _slicedToArray(_useInView, 2),
+      ref1 = _useInView2[0],
+      inView1 = _useInView2[1];
+
+  var _useInView3 = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])(),
+      _useInView4 = _slicedToArray(_useInView3, 2),
+      ref2 = _useInView4[0],
+      inView2 = _useInView4[1];
+
+  var _useInView5 = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])(),
+      _useInView6 = _slicedToArray(_useInView5, 2),
+      ref3 = _useInView6[0],
+      inView3 = _useInView6[1];
+
+  var _useInView7 = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])(),
+      _useInView8 = _slicedToArray(_useInView7, 2),
+      ref4 = _useInView8[0],
+      inView4 = _useInView8[1];
+
+  var allContents = document.getElementsByClassName('contents');
+  var content1 = inView1 && inView2 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content1",
+    className: "contents first-content",
+    id: "projects-content-1",
+    animate: {
+      opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      stiffness: 700,
+      damping: 30
     }
-  }]);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    animate: {
+      opacity: 1,
+      x: 40
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "Super Wario"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors",
+    animate: {
+      opacity: 1,
+      x: -60
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "JavaScript | HTML | CSS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2
+    }
+  }, "A simple side-scrolling canvas game coded in JS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2.15
+    }
+  }, "Clean code based on Object Oriented Programming for scalability and modular class implementation"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2.3
+    }
+  }, "Utilized a sprite sheet for character animation and in-game objects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -140
+    },
+    transition: {
+      delay: 2.45
+    },
+    className: "content-description-dates"
+  }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content1",
+    className: "contents first-content",
+    id: "projects-content-1",
+    initial: {
+      opacity: 1,
+      scale: 1
+    },
+    animate: {
+      opacity: 0,
+      scale: 0.5
+    },
+    transition: {
+      delay: 0
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.25
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, "Super Wario"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors"
+  }, "JavaScript | HTML | CSS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Completed 16-week bootcamp at Fort Sill, OK | 36-week AIT at Fort Sam Houston, TX"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Acquired an NREMT certificate in 20 weeks during AIT to qualify as a national EMT"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Deployed to Port Hueneme for 12 weeks on a Navy pre-deployment support mission"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    className: "content-description-dates"
+  }, "January 2012 - December 2018"))));
+  var content2 = inView2 && inView3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref2
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content2",
+    className: "contents",
+    id: "projects-content-2",
+    animate: {
+      opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      bounce: 0.8
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: 40
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "Fazebook"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors",
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: -60
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "React/Redux | Ruby on Rails | PSQL | AWS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2
+    }
+  }, "Created a fluid one-page web application fully utilizing Redux store and history to control state and render specific components."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2.15
+    }
+  }, "API built on Rails framework using RESTful routes; also including model-level / database-level validations"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2.3
+    }
+  }, "Utilized AWS cloud hosting for image hosting and seeding"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -140
+    },
+    transition: {
+      delay: 2.45
+    },
+    className: "content-description-dates"
+  }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref2
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content2",
+    className: "contents",
+    id: "projects-content-2",
+    initial: {
+      opacity: 1,
+      scale: 1
+    },
+    animate: {
+      opacity: 0,
+      scale: 0.5
+    },
+    transition: {
+      delay: 0
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, "Fazebook"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors"
+  }, "React/Redux | Ruby on Rails | PSQL | AWS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Designed an electronic-cigarette on SolidWorks/AutoCAD to accept a standard 18650 li-ion battery. Contructed of highly conductive copper alloy 110"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Oversaw manufacturing and distributed 3 main product lines and dozens of compatible accessories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Accumulative 20,000 units and accessories sold worldwide to 200+ retailers, 50+ distributors, 10,000+ individuals"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    className: "content-description-dates"
+  }, "October 2013 - December 2018"))));
+  var content3 = inView3 && inView4 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content3",
+    className: "contents",
+    id: "projects-content-3",
+    animate: {
+      opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      bounce: 0.8
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: 40
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "Doctor's Note"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors",
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: -60
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "React/Redux | Mongoose/MongoDB | Express.js | Axios"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2
+    }
+  }, "Utilized React, creating a fluid one-page web application to control two portals integrated to one; one for patients, one for doctors."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2.15
+    }
+  }, "API calls built using Express Router using standardized RESTful routes to query into MongoDB Atlas Database."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -200
+    },
+    transition: {
+      delay: 2.3
+    }
+  }, "Designed a calendar module to handle creating/updating/deleting patient appointments."), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -140
+    },
+    transition: {
+      delay: 2.45
+    },
+    className: "content-description-dates"
+  }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref3
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content3",
+    className: "contents",
+    id: "projects-content-3",
+    initial: {
+      opacity: 1,
+      scale: 1
+    },
+    animate: {
+      opacity: 0,
+      scale: 0.5
+    },
+    transition: {
+      delay: 0
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, "Doctor's Note - D.Note"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors"
+  }, "React/Redux | Mongoose/MongoDB | Express.js | Axios"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Managed 30+ front-of-house staff and delegated employee sections/responsibilites for optimized workflow"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Created training guides for staff to allow for uniformity and consistency during customer interactions"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Restaurant maintained 4.5 stars on Yelp with 1,000+ reviews"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    className: "content-description-dates"
+  }, "March 2016 - December 2020"))));
+  var content4 = inView4 && !inView3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref4
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content4",
+    className: "contents last-content",
+    id: "projects-content-4",
+    animate: {
+      opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      bounce: 0.8
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: 40
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "Super Wario"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors",
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: -60
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "JavaScript | HTML | CSS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -140
+    },
+    transition: {
+      delay: 2.3
+    },
+    className: "content-description-dates"
+  }, "Live Link")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: 40
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "Fazebook"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors",
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: -60
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "React/Redux | Ruby on Rails | PSQL | AWS"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -140
+    },
+    transition: {
+      delay: 2.3
+    },
+    className: "content-description-dates"
+  }, "Live Link")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles",
+    animate: {
+      opacity: 1
+    },
+    transition: {
+      delay: 1.3
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: 40
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "Doctor's Note"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors",
+    initial: {
+      opacity: 0
+    },
+    animate: {
+      opacity: 1,
+      x: -60
+    },
+    transition: {
+      delay: 1.5
+    }
+  }, "React/Redux | Mongoose/MongoDB | Express.js | Axios"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    animate: {
+      opacity: 1,
+      x: -140
+    },
+    transition: {
+      delay: 2.3
+    },
+    className: "content-description-dates"
+  }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref4
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    key: "content4",
+    className: "contents last-content",
+    id: "projects-content-4",
+    initial: {
+      opacity: 1,
+      scale: 1
+    },
+    animate: {
+      opacity: 0,
+      scale: 0.5
+    },
+    transition: {
+      delay: 0
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-first-title content-titles"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-name-majors"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, "Card 4"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "content-title-majors"
+  }, "Computer Software Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+    className: "content-descriptions"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
+    className: "content-description-dates"
+  }, "May 2021 - August 2021"))));
 
-  return Projects;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  var handleScroll = function handleScroll() {
+    react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"].hide();
+
+    if (scrolling) {
+      myRef.current.scrollTop = scrollY;
+    } else if (scrollY < myRef.current.scrollTop && scrollY < (allContents.length - 1) * 2225) {
+      setScrolling(true);
+      setTimeout(function () {
+        myRef.current.scrollTop = 2225 * (Math.floor(scrollY / 2225) + 1);
+        setScrolling(false);
+      }, 400);
+      setScrollY(myRef.current.scrollTop);
+      scrollProgressBar('down');
+    } else if (scrollY > myRef.current.scrollTop) {
+      setScrolling(true);
+      setTimeout(function () {
+        myRef.current.scrollTop = 2225 * Math.floor(scrollY / 2226);
+        setScrolling(false);
+      }, 400);
+      setScrollY(myRef.current.scrollTop);
+      scrollProgressBar('up');
+    } else {
+      myRef.current.scrollTop = scrollY;
+      document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+        transform: 'scale(1.1)',
+        easing: 'ease-in-out'
+      }, 400);
+    }
+  };
+
+  var scrollProgressBar = function scrollProgressBar(dir) {
+    if (animating) return;
+    animate(true);
+    setTimeout(function () {
+      animate(false);
+    }, 500);
+
+    switch (dir) {
+      case 'down':
+        if (!!document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 2))) {
+          var contentBox = document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 2));
+          contentBox.classList.add('scrolled');
+          contentBox.animate({
+            transform: 'scale(0.8)',
+            easing: 'ease-in-out'
+          }, 850);
+
+          if (!!document.getElementById("projects-content-".concat(Math.floor(scrollY / 2225) + 1))) {
+            document.getElementById("projects-content-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+              transform: 'scale(1.15)',
+              easing: 'linear'
+            }, 160);
+            setTimeout(function () {
+              document.getElementById("projects-content-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+                transform: 'scale(0.2)',
+                opacity: '0',
+                easing: 'linear'
+              }, 240);
+            }, 160);
+          }
+        }
+
+        return;
+
+      case 'up':
+        if (!!document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 1))) {
+          document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 1)).classList.remove('scrolled');
+
+          if (!!document.getElementById("projects-content-".concat(Math.floor(scrollY / 2225) + 1))) {
+            document.getElementById("projects-content-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+              transform: 'scale(0.85)',
+              easing: 'linear'
+            }, 160);
+            setTimeout(function () {
+              document.getElementById("projects-content-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+                transform: 'scale(1.8)',
+                opacity: '0',
+                easing: 'linear'
+              }, 240);
+            }, 160);
+          }
+        }
+
+        return;
+    }
+  };
+
+  var toggleTooltip = function toggleTooltip() {
+    react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"].hide();
+    setTimeout(function () {
+      react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"].show(myRef);
+    }, 2000);
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "projects-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "content-scroll-progress"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "scroll-1",
+    className: "scrolled",
+    initial: {
+      scale: 0.8
+    },
+    animate: {
+      scale: 1.15
+    },
+    transition: {
+      type: 'spring',
+      bounce: 0.6,
+      delay: 0.5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "scroll-2",
+    initial: {
+      scale: 0.8
+    },
+    animate: {
+      scale: 1.15
+    },
+    transition: {
+      type: 'spring',
+      bounce: 0.6,
+      delay: 1
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "scroll-3",
+    initial: {
+      scale: 0.8
+    },
+    animate: {
+      scale: 1.15
+    },
+    transition: {
+      type: 'spring',
+      bounce: 0.6,
+      delay: 1
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "scroll-4",
+    initial: {
+      scale: 0.8
+    },
+    animate: {
+      scale: 1.15
+    },
+    transition: {
+      type: 'spring',
+      bounce: 0.6,
+      delay: 1
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "projects-title",
+    animate: {
+      opacity: 1,
+      y: '25vh'
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Projects"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "all-contents",
+    id: "all-content",
+    ref: myRef,
+    onClick: function onClick() {
+      return toggleTooltip();
+    },
+    onScroll: function onScroll() {
+      return handleScroll();
+    },
+    transition: {
+      delay: 0
+    },
+    "data-tip": "Mouse scroll to navigate"
+  }, content1, content2, content3, content4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    delayShow: 1000,
+    scrollHide: true,
+    resizeHide: true,
+    clickable: true
+  }));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Projects);
 
@@ -2897,21 +3535,7 @@ var ProjectsCard = function ProjectsCard(props) {
     className: "far fa-times-circle close-icon"
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "content-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    id: "icons"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
-    id: "left-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "left-arrow-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-angle-double-left"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
-    id: "right-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "right-arrow-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-angle-double-right"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
     card: "projects"
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text-projects"
