@@ -46,10 +46,10 @@ class Info extends React.Component {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: '26.5vh' }}
+                animate={{ y: '24.5vh' }}
                 transition={{ delay: 0 }}
               >
-                Riverside, CA 92508
+                Location  || Riverside, CA
               </motion.div>
               <motion.div
                 className="infos info-text"
@@ -58,7 +58,7 @@ class Info extends React.Component {
                   scale: 1.1,
                   transition: { type: "spring", bounce: 0.6 },
                 }}
-                animate={{ y: '26.5vh' }}
+                animate={{ y: '24.5vh' }}
                 transition={{ delay: 0 }}
               >
                 JkJosephKim@hotmail.com
@@ -92,7 +92,7 @@ class Info extends React.Component {
                 animate={{ y: 0, scale: 0.2, opacity: 0.4 }}
                 transition={{ delay: 0 }}
               >
-                Riverside, CA 92508
+                Location || Riverside, CA
               </motion.div>
               <motion.div
                 className="infos info-text"

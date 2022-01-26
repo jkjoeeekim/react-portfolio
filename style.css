@@ -87,7 +87,7 @@ html {
 #contact {
   position: relative;
   margin-top: 0;
-  padding-top: 2vh;
+  padding-top: 1.5vh;
   border-top: 2px solid white;
   width: 95%;
   left: 0;
@@ -103,7 +103,7 @@ html {
 
 #info {
   position: relative;
-  margin-top: 3vh;
+  margin-top: 2vh;
   width: 100%;
   padding-bottom: 1.75vh;
   color: white;
@@ -1371,7 +1371,7 @@ html {
 
 #unicorn {
   position: absolute;
-  top: 4.5vh;
+  top: 3.5vh;
   right: 1vw;
   height: 59px;
   width: 59px;

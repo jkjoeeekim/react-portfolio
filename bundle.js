@@ -5112,12 +5112,12 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: '26.5vh'
+          y: '24.5vh'
         },
         transition: {
           delay: 0
         }
-      }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+      }, "Location  || Riverside, CA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "infos info-text",
         id: "contact-email",
         whileHover: {
@@ -5128,7 +5128,7 @@ var Info = /*#__PURE__*/function (_React$Component) {
           }
         },
         animate: {
-          y: '26.5vh'
+          y: '24.5vh'
         },
         transition: {
           delay: 0
@@ -5168,7 +5168,7 @@ var Info = /*#__PURE__*/function (_React$Component) {
         transition: {
           delay: 0
         }
-      }, "Riverside, CA 92508"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+      }, "Location || Riverside, CA"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "infos info-text",
         id: "contact-email",
         whileHover: {
