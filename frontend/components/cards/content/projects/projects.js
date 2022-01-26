@@ -66,7 +66,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.45 }}
             className='content-description-dates'
-            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
+            onClick={() => window.open('https://jkjoeeekim.github.io/Super_Wario/dist/index', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>
@@ -166,7 +166,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.45 }}
             className='content-description-dates'
-            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
+            onClick={() => window.open('https://fazebook.herokuapp.com/#/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>
@@ -264,7 +264,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.45 }}
             className='content-description-dates'
-            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
+            onClick={() => window.open('https://d-note.herokuapp.com/#/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>
@@ -350,7 +350,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.3 }}
             className='content-description-dates'
-            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
+            onClick={() => window.open('https://jkjoeeekim.github.io/Super_Wario/dist/index', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
         <motion.div
@@ -385,7 +385,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.3 }}
             className='content-description-dates'
-            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
+            onClick={() => window.open('https://fazebook.herokuapp.com/#/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
         <motion.div
@@ -420,7 +420,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.3 }}
             className='content-description-dates'
-            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
+            onClick={() => window.open('https://d-note.herokuapp.com/#/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>

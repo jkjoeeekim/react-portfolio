@@ -2281,7 +2281,7 @@ var Projects = function Projects() {
     },
     className: "content-description-dates",
     onClick: function onClick() {
-      return window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank');
+      return window.open('https://jkjoeeekim.github.io/Super_Wario/dist/index', '_blank');
     }
   }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref1
@@ -2404,7 +2404,7 @@ var Projects = function Projects() {
     },
     className: "content-description-dates",
     onClick: function onClick() {
-      return window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank');
+      return window.open('https://fazebook.herokuapp.com/#/', '_blank');
     }
   }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref2
@@ -2521,7 +2521,7 @@ var Projects = function Projects() {
     },
     className: "content-description-dates",
     onClick: function onClick() {
-      return window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank');
+      return window.open('https://d-note.herokuapp.com/#/', '_blank');
     }
   }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref3
@@ -2614,7 +2614,7 @@ var Projects = function Projects() {
     },
     className: "content-description-dates",
     onClick: function onClick() {
-      return window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank');
+      return window.open('https://jkjoeeekim.github.io/Super_Wario/dist/index', '_blank');
     }
   }, "Live Link")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "content-first-title content-titles",
@@ -2661,7 +2661,7 @@ var Projects = function Projects() {
     },
     className: "content-description-dates",
     onClick: function onClick() {
-      return window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank');
+      return window.open('https://fazebook.herokuapp.com/#/', '_blank');
     }
   }, "Live Link")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "content-first-title content-titles",
@@ -2708,7 +2708,7 @@ var Projects = function Projects() {
     },
     className: "content-description-dates",
     onClick: function onClick() {
-      return window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank');
+      return window.open('https://d-note.herokuapp.com/#/', '_blank');
     }
   }, "Live Link")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref4
