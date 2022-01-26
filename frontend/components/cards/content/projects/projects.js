@@ -66,6 +66,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.45 }}
             className='content-description-dates'
+            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>
@@ -165,6 +166,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.45 }}
             className='content-description-dates'
+            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>
@@ -262,6 +264,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.45 }}
             className='content-description-dates'
+            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>
@@ -347,6 +350,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.3 }}
             className='content-description-dates'
+            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
         <motion.div
@@ -381,6 +385,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.3 }}
             className='content-description-dates'
+            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
         <motion.div
@@ -415,6 +420,7 @@ const Projects = () => {
             animate={{ opacity: 1, x: -140 }}
             transition={{ delay: 2.3 }}
             className='content-description-dates'
+            onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
           >Live Link</motion.li>
         </motion.ul>
       </motion.div>

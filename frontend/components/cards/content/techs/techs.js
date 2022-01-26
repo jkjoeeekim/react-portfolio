@@ -424,6 +424,8 @@ const Techs = () => {
       <motion.div
         id="techs-all-icons"
         className="techs-contents"
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0, scale: 0.2 }}
       >
         <motion.div
           id="techs-all-icons-row-1"
@@ -888,6 +890,8 @@ const Techs = () => {
       <motion.div
         id="techs-all-texts"
         className="techs-contents"
+        initial={{ opacity: 1, scale: 1 }}
+        animate={{ opacity: 0, scale: 0.3 }}
       >
         <motion.div
           id="techs-all-texts-row-1"

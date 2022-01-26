@@ -51,6 +51,7 @@ class Socials extends React.Component {
                   scale: 1.25,
                   transition: { type: "spring", bounce: 0.8 },
                 }}
+                onClick={() => window.open('https://www.linkedin.com/in/joseph-kim-2a6164205/', '_blank')}
               >
               </motion.div>
               <motion.div
@@ -59,6 +60,7 @@ class Socials extends React.Component {
                   scale: 1.25,
                   transition: { type: "spring", bounce: 0.8 },
                 }}
+                onClick={() => window.open('https://github.com/jkjoeeekim', '_blank')}
               >
               </motion.div>
             </motion.div>

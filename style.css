@@ -802,7 +802,7 @@ html {
 /* TECHS TEXTS STYLING */
 /* <----  Start ----> */
 #techs-all-texts {
-  position: relative;
+  position: absolute;
   /* height: 80%; */
   width: 90%;
   background-color: rgb(34, 34, 34, 0.5);
