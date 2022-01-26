@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './header/top_nav';
 import Cards from './cards/cards_container';
 import Socials from './socials/socials';
+import Unicorn from './unicorn';
 import About from './about/about';
 
 class Splash extends React.Component {
@@ -12,10 +13,7 @@ class Splash extends React.Component {
   render() {
     return (
       <div>
-        <div
-          id="unicorn"
-        >
-        </div>
+        <Unicorn></Unicorn>
         <div>
           <Header store={this.props.store}></Header>
           <Socials store={this.props.store}></Socials>

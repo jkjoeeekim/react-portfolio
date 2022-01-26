@@ -5636,7 +5636,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_top_nav__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./header/top_nav */ "./frontend/components/header/top_nav.js");
 /* harmony import */ var _cards_cards_container__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./cards/cards_container */ "./frontend/components/cards/cards_container.js");
 /* harmony import */ var _socials_socials__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./socials/socials */ "./frontend/components/socials/socials.js");
-/* harmony import */ var _about_about__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./about/about */ "./frontend/components/about/about.js");
+/* harmony import */ var _unicorn__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./unicorn */ "./frontend/components/unicorn.js");
+/* harmony import */ var _about_about__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./about/about */ "./frontend/components/about/about.js");
 function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -5665,6 +5666,7 @@ function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.g
 
 
 
+
 var Splash = /*#__PURE__*/function (_React$Component) {
   _inherits(Splash, _React$Component);
 
@@ -5679,9 +5681,7 @@ var Splash = /*#__PURE__*/function (_React$Component) {
   _createClass(Splash, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
-        id: "unicorn"
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_top_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_unicorn__WEBPACK_IMPORTED_MODULE_4__["default"], null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_top_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
         store: this.props.store
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_socials_socials__WEBPACK_IMPORTED_MODULE_3__["default"], {
         store: this.props.store
@@ -5693,6 +5693,49 @@ var Splash = /*#__PURE__*/function (_React$Component) {
 }(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
 
 /* harmony default export */ __webpack_exports__["default"] = (Splash);
+
+/***/ }),
+
+/***/ "./frontend/components/unicorn.js":
+/*!****************************************!*\
+  !*** ./frontend/components/unicorn.js ***!
+  \****************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
+/* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
+/* harmony import */ var react_tooltip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-tooltip */ "./node_modules/react-tooltip/dist/index.es.js");
+
+
+
+
+
+var Unicorn = function Unicorn() {
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "unicorn",
+    whileHover: {
+      scale: 1.2,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    },
+    onClick: {
+      scale: 1.2,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    }
+  });
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (Unicorn);
 
 /***/ }),
 

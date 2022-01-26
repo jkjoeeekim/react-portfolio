@@ -1376,4 +1376,5 @@ html {
   height: 59px;
   width: 59px;
   background-image: url(./frontend/assets/unicorn_nobg_90.png);
+  z-index: 1000;
 }
