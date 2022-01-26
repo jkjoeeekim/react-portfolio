@@ -5724,13 +5724,6 @@ var Unicorn = function Unicorn() {
         type: "spring",
         bounce: 0.8
       }
-    },
-    onClick: {
-      scale: 1.2,
-      transition: {
-        type: "spring",
-        bounce: 0.8
-      }
     }
   });
 };
