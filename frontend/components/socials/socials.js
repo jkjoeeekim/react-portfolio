@@ -26,7 +26,7 @@ class Socials extends React.Component {
       >
         {this.state.display ? (
           <motion.div>
-            <motion.div
+            {/* <motion.div
               id="socials-text-area"
               transition='0'
             >
@@ -39,10 +39,10 @@ class Socials extends React.Component {
               >
                 SOCIALS
               </motion.p>
-            </motion.div>
+            </motion.div> */}
             <motion.div
               id="social-icons"
-              animate={{ x: '-6.5vw' }}
+              animate={{ x: '-2.5vw' }}
               transition={{ delay: 0 }}
             >
               <motion.div
@@ -65,7 +65,7 @@ class Socials extends React.Component {
           </motion.div>
         ) : (
           <motion.div>
-            <motion.div
+            {/* <motion.div
               id="socials-text-area"
               animate={{ x: 0 }}
               transition={{ delay: 0 }}
@@ -79,10 +79,11 @@ class Socials extends React.Component {
               >
                 SOCIALS
               </motion.p>
-            </motion.div>
+            </motion.div> */}
             <motion.div
               id="social-icons"
-              animate={{ x: '22vw' }}
+              // animate={{ x: '22vw' }}
+              animate={{ x: '-1.5vw' }}
               transition={{ delay: 0 }}
             >
               <motion.div

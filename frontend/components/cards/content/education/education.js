@@ -18,7 +18,7 @@ const Education = (props) => {
   const content1 = (inView1 && inView2) ? (
     <motion.div ref={ref1}>
       <motion.div
-        key='content1'
+        // key='content1'
         className="contents first-content"
         id="edu-content-1"
         animate={{ opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1], scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1], y: [-100, -300, -450, -550, -600, -200, 0] }}
@@ -69,7 +69,7 @@ const Education = (props) => {
   ) : (
     <motion.div ref={ref1}>
       <motion.div
-        key='content1'
+        // key='content1'
         className="contents first-content"
         id="edu-content-1"
         initial={{ opacity: 1, scale: 1 }}
@@ -110,7 +110,7 @@ const Education = (props) => {
   const content2 = (inView2 && inView3) ? (
     <motion.div ref={ref2}>
       <motion.div
-        key='content2'
+        // key='content2'
         className="contents"
         id="edu-content-2"
         animate={{ opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1], scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1], y: [-100, -300, -450, -550, -600, -200, 0] }}
@@ -163,7 +163,7 @@ const Education = (props) => {
   ) : (
     <motion.div ref={ref2}>
       <motion.div
-        key='content2'
+        // key='content2'
         className="contents"
         id="edu-content-2"
         initial={{ opacity: 1, scale: 1 }}
@@ -202,7 +202,7 @@ const Education = (props) => {
   const content3 = (inView3 && inView4) ? (
     <motion.div ref={ref3}>
       <motion.div
-        key='content3'
+        // key='content3'
         className="contents"
         id="edu-content-3"
         animate={{ opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1], scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1], y: [-100, -300, -450, -550, -600, -200, 0] }}
@@ -255,7 +255,7 @@ const Education = (props) => {
   ) : (
     <motion.div ref={ref3}>
       <motion.div
-        key='content3'
+        // key='content3'
         className="contents"
         id="edu-content-3"
         initial={{ opacity: 1, scale: 1 }}
@@ -294,7 +294,7 @@ const Education = (props) => {
   const content4 = (inView4 && !inView3) ? (
     <motion.div ref={ref4}>
       <motion.div
-        key='content4'
+        // key='content4'
         className="contents last-content"
         id="edu-content-4"
         animate={{ opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1], scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1], y: [-100, -300, -450, -550, -600, -200, 0] }}
@@ -407,7 +407,7 @@ const Education = (props) => {
   ) : (
     <motion.div ref={ref4}>
       <motion.div
-        key='content4'
+        // key='content4'
         className="contents last-content"
         id="edu-content-4"
         initial={{ opacity: 1, scale: 1 }}

@@ -12,10 +12,14 @@ class Splash extends React.Component {
   render() {
     return (
       <div>
+        <div
+          id="unicorn"
+        >
+        </div>
         <div>
           <Header store={this.props.store}></Header>
           <Socials store={this.props.store}></Socials>
-          <About store={this.props.store}></About>
+          {/* <About store={this.props.store}></About> */}
         </div>
         <Cards></Cards>
       </div>

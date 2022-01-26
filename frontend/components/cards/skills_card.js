@@ -111,7 +111,7 @@ const SkillsCard = (props) => {
           </motion.div>
           {isToggled ? (
             <motion.div id="content-container">
-              <motion.div id="icons">
+              {/* <motion.div id="icons">
                 <motion.button id="left-icon">
                   <motion.div className="left-arrow-icon">
                     <i className="fas fa-angle-double-left"></i>
@@ -122,7 +122,7 @@ const SkillsCard = (props) => {
                     <i className="fas fa-angle-double-right"></i>
                   </motion.div>
                 </motion.button>
-              </motion.div>
+              </motion.div> */}
               <Content card="skills" />
             </motion.div>
           ) : (

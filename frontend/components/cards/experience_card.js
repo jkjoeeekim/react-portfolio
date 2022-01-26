@@ -83,6 +83,7 @@ const ExperienceCard = (props) => {
         exit={{ opacity: 0.4 }}
         id='experience-card'
         className="cards"
+        key='content1'
       >
         <motion.div
           animate={isToggled ? "active" : "inActive"}

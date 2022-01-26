@@ -363,7 +363,8 @@ var Cards = /*#__PURE__*/function (_React$Component) {
           opacity: 1
         },
         transition: {
-          delay: 0
+          delay: 0,
+          duration: 0.45
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "cards-container-left"
@@ -403,10 +404,11 @@ var Cards = /*#__PURE__*/function (_React$Component) {
           y: 0,
           scale: 0.1,
           rotate: -45,
-          opacity: 0.5
+          opacity: 0.3
         },
         transition: {
-          delay: 0
+          delay: 0,
+          duration: 0.3
         }
       }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         className: "cards-container-left"
@@ -666,7 +668,7 @@ var Education = function Education(props) {
   var content1 = inView1 && inView2 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content1",
+    // key='content1'
     className: "contents first-content",
     id: "edu-content-1",
     animate: {
@@ -739,7 +741,7 @@ var Education = function Education(props) {
   }, "May 2021 - August 2021")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content1",
+    // key='content1'
     className: "contents first-content",
     id: "edu-content-1",
     initial: {
@@ -773,7 +775,7 @@ var Education = function Education(props) {
   var content2 = inView2 && inView3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref2
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content2",
+    // key='content2'
     className: "contents",
     id: "edu-content-2",
     animate: {
@@ -851,7 +853,7 @@ var Education = function Education(props) {
   }, "July 2020 - January 2021")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref2
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content2",
+    // key='content2'
     className: "contents",
     id: "edu-content-2",
     initial: {
@@ -879,7 +881,7 @@ var Education = function Education(props) {
   var content3 = inView3 && inView4 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref3
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content3",
+    // key='content3'
     className: "contents",
     id: "edu-content-3",
     animate: {
@@ -957,7 +959,7 @@ var Education = function Education(props) {
   }, "August 2011 - June 2014")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref3
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content3",
+    // key='content3'
     className: "contents",
     id: "edu-content-3",
     initial: {
@@ -985,7 +987,7 @@ var Education = function Education(props) {
   var content4 = inView4 && !inView3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content4",
+    // key='content4'
     className: "contents last-content",
     id: "edu-content-4",
     animate: {
@@ -1135,7 +1137,7 @@ var Education = function Education(props) {
   }, "August 2011 - June 2014")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content4",
+    // key='content4'
     className: "contents last-content",
     id: "edu-content-4",
     initial: {
@@ -1417,10 +1419,12 @@ var Experiences = function Experiences() {
       inView4 = _useInView8[1];
 
   var allContents = document.getElementsByClassName('contents');
+  console.log('exp1' + inView1);
+  console.log('exp2' + inView2);
   var content1 = inView1 && inView2 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content1",
+    // key='content1'
     className: "contents first-content",
     id: "exp-content-1",
     animate: {
@@ -1501,7 +1505,7 @@ var Experiences = function Experiences() {
   }, "January 2012 - December 2018")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref1
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content1",
+    // key='content1'
     className: "contents first-content",
     id: "exp-content-1",
     initial: {
@@ -1535,7 +1539,7 @@ var Experiences = function Experiences() {
   var content2 = inView2 && inView3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref2
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content2",
+    // key='content2'
     className: "contents",
     id: "exp-content-2",
     animate: {
@@ -1583,7 +1587,7 @@ var Experiences = function Experiences() {
     transition: {
       delay: 1.5
     }
-  }, "Partner | co-owner"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+  }, "Partner LLC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
     className: "content-descriptions"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
     animate: {
@@ -1621,7 +1625,7 @@ var Experiences = function Experiences() {
   }, "October 2013 - December 2018")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref2
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content2",
+    // key='content2'
     className: "contents",
     id: "exp-content-2",
     initial: {
@@ -1641,7 +1645,7 @@ var Experiences = function Experiences() {
     className: "content-title-name-majors"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, "Olympus Creations LLC"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     className: "content-title-majors"
-  }, "Partner | co-owner"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+  }, "Partner LLC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
     className: "content-descriptions"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Designed an electronic-cigarette on SolidWorks/AutoCAD to accept a standard 18650 li-ion battery. Contructed of highly conductive copper alloy 110"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Oversaw manufacturing and distributed 3 main product lines and dozens of compatible accessories"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, null, "Accumulative 20,000 units and accessories sold worldwide to 200+ retailers, 50+ distributors, 10,000+ individuals"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
     className: "content-description-dates"
@@ -1649,7 +1653,7 @@ var Experiences = function Experiences() {
   var content3 = inView3 && inView4 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref3
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content3",
+    // key='content3'
     className: "contents",
     id: "exp-content-3",
     animate: {
@@ -1735,7 +1739,7 @@ var Experiences = function Experiences() {
   }, "March 2016 - December 2020")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref3
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content3",
+    // key='content3'
     className: "contents",
     id: "exp-content-3",
     initial: {
@@ -1763,7 +1767,7 @@ var Experiences = function Experiences() {
   var content4 = inView4 && !inView3 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content4",
+    // key='content4'
     className: "contents last-content",
     id: "exp-content-4",
     animate: {
@@ -1855,7 +1859,7 @@ var Experiences = function Experiences() {
     transition: {
       delay: 1.5
     }
-  }, "Partner | co-owner"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
+  }, "Partner LLC"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
     className: "content-descriptions"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
     animate: {
@@ -1913,7 +1917,7 @@ var Experiences = function Experiences() {
   }, "March 2016 - December 2020")))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     ref: ref4
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    key: "content4",
+    // key='content4'
     className: "contents last-content",
     id: "exp-content-4",
     initial: {
@@ -2915,131 +2919,1398 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var framer_motion__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! framer-motion */ "./node_modules/framer-motion/dist/es/index.js");
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+/* harmony import */ var react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-intersection-observer */ "./node_modules/react-intersection-observer/react-intersection-observer.m.js");
+/* harmony import */ var react_tooltip__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react-tooltip */ "./node_modules/react-tooltip/dist/index.es.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } else if (call !== void 0) { throw new TypeError("Derived constructors may only return object or undefined"); } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Boolean.prototype.valueOf.call(Reflect.construct(Boolean, [], function () {})); return true; } catch (e) { return false; } }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
 
 
 
-var Techs = /*#__PURE__*/function (_React$Component) {
-  _inherits(Techs, _React$Component);
 
-  var _super = _createSuper(Techs);
 
-  function Techs(props) {
-    _classCallCheck(this, Techs);
+var Techs = function Techs() {
+  var _useState = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      scrollY = _useState2[0],
+      setScrollY = _useState2[1];
 
-    return _super.call(this, props);
-  }
+  var _useState3 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      scrolling = _useState4[0],
+      setScrolling = _useState4[1];
 
-  _createClass(Techs, [{
-    key: "render",
-    value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "techs-content"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "techs-title",
-        animate: {
-          opacity: 1,
-          y: '25vh'
-        },
-        transition: {
-          delay: 0.5
-        }
-      }, "Tech stacks | Languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "contents",
-        initial: {
-          scale: 1.15,
-          lineHeight: 3
-        },
-        animate: {
-          scale: 1,
-          y: '3vh',
-          lineHeight: 1
-        },
-        transition: {
-          delay: 2
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "content-first-title content-titles"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "content-title-name-majors"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        initial: {
-          opacity: 0
-        },
-        animate: {
-          opacity: 1,
-          x: 40
-        },
-        transition: {
-          delay: 0.5
-        }
-      }, "App Academy"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        className: "content-title-majors",
-        initial: {
-          opacity: 0
-        },
-        animate: {
-          opacity: 1,
-          x: -60
-        },
-        transition: {
-          delay: 1
-        }
-      }, "Computer Sofware Engineering"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].ul, {
-        className: "content-descriptions"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
-        animate: {
-          opacity: 1,
-          x: -150
-        },
-        transition: {
-          delay: 1.25
-        }
-      }, "Highly selective software-engineering(SWE) program with a 3% acceptance rate"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
-        animate: {
-          opacity: 1,
-          x: -130
-        },
-        transition: {
-          delay: 1.5
-        }
-      }, "Accumulative 700+ hours full-stack SWE program"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].li, {
-        animate: {
-          opacity: 1,
-          x: -110
-        },
-        transition: {
-          delay: 1.75
-        }
-      }, "third point"))));
+  var _useState5 = Object(react__WEBPACK_IMPORTED_MODULE_0__["useState"])(false),
+      _useState6 = _slicedToArray(_useState5, 2),
+      animating = _useState6[0],
+      animate = _useState6[1];
+
+  var myRef = Object(react__WEBPACK_IMPORTED_MODULE_0__["useRef"])(null);
+
+  var _useInView = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])(),
+      _useInView2 = _slicedToArray(_useInView, 2),
+      ref1 = _useInView2[0],
+      inView1 = _useInView2[1];
+
+  var _useInView3 = Object(react_intersection_observer__WEBPACK_IMPORTED_MODULE_2__["useInView"])(),
+      _useInView4 = _slicedToArray(_useInView3, 2),
+      ref2 = _useInView4[0],
+      inView2 = _useInView4[1];
+
+  var allContents = document.getElementsByClassName('techs-contents');
+  console.log('1' + inView1);
+  console.log('2' + inView2);
+  var content = inView1 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons",
+    className: "techs-contents",
+    animate: {
+      opacity: [0.1, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      stiffness: 700,
+      damping: 30
     }
-  }]);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-1",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-psql",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1320
+    },
+    transition: {
+      delay: 1
+    } // onHover={() => toggleTooltip()}
 
-  return Techs;
-}(react__WEBPACK_IMPORTED_MODULE_0___default.a.Component);
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-psql-img",
+    "data-tip": "PostgresQl | MySQL",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-css",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1490
+    },
+    transition: {
+      delay: 1.36
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-css-img",
+    "data-tip": "CSS / SCSS",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-aws",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1640
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-aws-img",
+    "data-tip": "Amazon Web Services",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-2",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-heroku",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1380
+    },
+    transition: {
+      delay: 0.66
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-heroku-img",
+    "data-tip": "Heroku deployement",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-html",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1560
+    },
+    transition: {
+      delay: 1.8
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-html-img",
+    "data-tip": "HTML",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-3",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-ruby",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1320
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-ruby-img",
+    "data-tip": "Ruby / Ruby on Rails",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-webpack",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1470
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-webpack-img",
+    "data-tip": "Webpack",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-jquery",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1620
+    },
+    transition: {
+      delay: 1.2
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-jquery-img",
+    "data-tip": "jQuery / JavaScript",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-4",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-mongo",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1380
+    },
+    transition: {
+      delay: 0.65
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-mongo-img",
+    "data-tip": "MongoDB / Atlas / Mongoose",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-node",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1560
+    },
+    transition: {
+      delay: 1
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-node-img",
+    "data-tip": "Node.js",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-5",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-npm",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1320
+    },
+    transition: {
+      delay: 0.88
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-npm-img",
+    "data-tip": "Node Package Manager",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-github",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1470
+    },
+    transition: {
+      delay: 0.75
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-github-img",
+    "data-tip": "Git | Github",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-redux",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 1620
+    },
+    transition: {
+      delay: 1.65
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-redux-img",
+    "data-tip": "React/Redux",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-fuzzy-top",
+    animate: {
+      opacity: [0, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      stiffness: 700,
+      damping: 30
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    delayShow: 200,
+    scrollHide: true,
+    resizeHide: true,
+    clickable: true
+  })) // <motion.div
+  // >
+  //   <motion.div
+  //     ref={ref1}
+  //     id="techs-all-icons"
+  //     className="techs-contents"
+  //   >
+  //     <motion.div
+  //       id="techs-all-icons-row-1"
+  //       className="techs-all-icons-rows"
+  //     >
+  //       <motion.div
+  //         className="techs-all-icons-rows-centering"
+  //       >
+  //         <motion.div
+  //           id="techs-github"
+  //           className="techs-icons"
+  //           animate={{ opacity: 1 }}
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-css"
+  //           className="techs-icons"
+  //           animate={{ opacity: 1 }}
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-aws"
+  //           className="techs-icons"
+  //           animate={{ opacity: 1 }}
+  //         ></motion.div>
+  //       </motion.div>
+  //     </motion.div>
+  //     <motion.div
+  //       id="techs-all-icons-row-2"
+  //       className="techs-all-icons-rows"
+  //     >
+  //       <motion.div
+  //         className="techs-all-icons-rows-centering"
+  //       >
+  //         <motion.div
+  //           id="techs-heroku"
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-html"
+  //         ></motion.div>
+  //       </motion.div>
+  //     </motion.div>
+  //     <motion.div
+  //       id="techs-all-icons-row-3"
+  //       className="techs-all-icons-rows"
+  //     >
+  //       <motion.div
+  //         className="techs-all-icons-rows-centering"
+  //       >
+  //         <motion.div
+  //           id="techs-ruby"
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-jquery"
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-webpack"
+  //         ></motion.div>
+  //       </motion.div>
+  //     </motion.div>
+  //     <motion.div
+  //       id="techs-all-icons-row-4"
+  //       className="techs-all-icons-rows"
+  //     >
+  //       <motion.div
+  //         className="techs-all-icons-rows-centering"
+  //       >
+  //         <motion.div
+  //           id="techs-mongo"
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-node"
+  //         ></motion.div>
+  //       </motion.div>
+  //     </motion.div>
+  //     <motion.div
+  //       id="techs-all-icons-row-5"
+  //       className="techs-all-icons-rows"
+  //     >
+  //       <motion.div
+  //         className="techs-all-icons-rows-centering"
+  //       >
+  //         <motion.div
+  //           id="techs-npm"
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-psql"
+  //         ></motion.div>
+  //         <motion.div
+  //           id="techs-redux"
+  //         ></motion.div>
+  //       </motion.div>
+  //     </motion.div>
+  //   </motion.div>
+  //   <motion.div
+  //     id="techs-all-icons-fuzzy-top"
+  //   >
+  //   </motion.div>
+  // </motion.div>
+  : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref1
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons",
+    className: "techs-contents"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-1",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-github",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1
+    } // onHover={() => toggleTooltip()}
+
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-github-img",
+    "data-tip": "Github",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-css",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1.36
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-css-img",
+    "data-tip": "CSS / SCSS",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-aws",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-aws-img",
+    "data-tip": "Amazon Web Services",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-2",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-heroku",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 0.66
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-heroku-img",
+    "data-tip": "Heroku deployement",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-html",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1.8
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-html-img",
+    "data-tip": "HTML",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-3",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-ruby",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-ruby-img",
+    "data-tip": "Ruby / Ruby on Rails",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-jquery",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-jquery-img",
+    "data-tip": "jQuery / JavaScript",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-webpack",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1.2
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-webpack-img",
+    "data-tip": "Webpack",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-4",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-mongo",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 0.65
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-mongo-img",
+    "data-tip": "MongoDB / Atlas / Mongoose",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-node",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-node-img",
+    "data-tip": "Node.js",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-row-5",
+    className: "techs-all-icons-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-icons-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-npm",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 0.88
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-npm-img",
+    "data-tip": "Node Package Manager",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-psql",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 0.75
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-psql-img",
+    "data-tip": "PostgresQL / PSQL lite",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-redux",
+    className: "techs-icons",
+    animate: {
+      opacity: 1,
+      y: 10
+    },
+    transition: {
+      delay: 1.65
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-redux-img",
+    "data-tip": "React/Redux",
+    transition: {
+      delay: 0
+    },
+    whileHover: {
+      scale: 1.15,
+      transition: {
+        type: "spring",
+        bounce: 0.8
+      }
+    } // ref={myRef}
+
+  }))))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-icons-fuzzy-top"
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
+    delayShow: 200,
+    scrollHide: true,
+    resizeHide: true,
+    clickable: true
+  }));
+  var content2 = inView2 ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref2,
+    id: "techs-all-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts",
+    className: "techs-contents",
+    animate: {
+      opacity: [0.1, 0.1, 0.1, 0.1, 0.3, 0.4, 1],
+      scale: [0, 0.1, 0.1, 0.1, 0.6, 1.2, 1],
+      y: [-100, -300, -450, -550, -600, -200, 0]
+    },
+    transition: {
+      delay: 0,
+      duration: 0.7,
+      times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7],
+      type: 'spring',
+      stiffness: 700,
+      damping: 30
+    }
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-row-1",
+    className: "techs-all-texts-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-texts-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    id: "techs-text-title-language",
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -25
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 50
+    },
+    transition: {
+      delay: 0.8
+    }
+  }, "HTML"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 125
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, "CSS | SCSS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 200
+    },
+    transition: {
+      delay: 1
+    }
+  }, "JavaScript"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 275
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, "React | Redux"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 350
+    },
+    transition: {
+      delay: 1.2
+    }
+  }, "Ruby on Rails"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-row-2",
+    className: "techs-all-texts-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-texts-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    id: "techs-text-title-techs",
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 0
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Deployment | Hosting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 75
+    },
+    transition: {
+      delay: 0.8
+    }
+  }, "Git | Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 150
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, "Heroku"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 225
+    },
+    transition: {
+      delay: 1
+    }
+  }, "AWS Cloud Hosting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 300
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, "Linux | Ubuntu"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-row-3",
+    className: "techs-all-texts-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-texts-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    id: "techs-text-title-databases",
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -25
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Databases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 50
+    },
+    transition: {
+      delay: 0.8
+    }
+  }, "PostgresQL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 125
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, "MongoDb | Atlas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 200
+    },
+    transition: {
+      delay: 1
+    }
+  }, "Amazon Web Services"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 275
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, "MySQL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: 350
+    },
+    transition: {
+      delay: 1.2
+    }
+  }, "SQlite")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-fuzzy-top"
+  })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    ref: ref2,
+    id: "techs-all-text"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts",
+    className: "techs-contents"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-row-1",
+    className: "techs-all-texts-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-texts-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    id: "techs-text-title-language",
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -525
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -550
+    },
+    transition: {
+      delay: 0.8
+    }
+  }, "HTML"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -525
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, "CSS | SCSS"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -500
+    },
+    transition: {
+      delay: 1
+    }
+  }, "JavaScript"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -575
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, "React | Redux"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -550
+    },
+    transition: {
+      delay: 1.2
+    }
+  }, "Ruby on Rails"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-row-2",
+    className: "techs-all-texts-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-texts-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    id: "techs-text-title-techs",
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -500
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Deployment | Hosting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -575
+    },
+    transition: {
+      delay: 0.8
+    }
+  }, "Git | Github"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -550
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, "Heroku"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -525
+    },
+    transition: {
+      delay: 1
+    }
+  }, "AWS Cloud Hosting"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -500
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, "Linux | Ubuntu"))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-row-3",
+    className: "techs-all-texts-rows"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    className: "techs-all-texts-rows-centering"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    id: "techs-text-title-databases",
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -525
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Databases"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -550
+    },
+    transition: {
+      delay: 0.8
+    }
+  }, "PostgresQL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -425
+    },
+    transition: {
+      delay: 0.9
+    }
+  }, "MongoDb | Atlas"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -400
+    },
+    transition: {
+      delay: 1
+    }
+  }, "Amazon Web Services"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -375
+    },
+    transition: {
+      delay: 1.1
+    }
+  }, "MySQL"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
+    className: "techs-texts",
+    animate: {
+      opacity: 1,
+      y: -250
+    },
+    transition: {
+      delay: 1.2
+    }
+  }, "SQlite")))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-texts-fuzzy-top"
+  }));
+
+  var handleScroll = function handleScroll() {
+    // ReactTooltip.hide();
+    console.log('scrollings');
+
+    if (scrolling) {
+      myRef.current.scrollTop = scrollY;
+    } else if (scrollY < myRef.current.scrollTop && scrollY < (allContents.length - 1) * 2225) {
+      setScrolling(true);
+      setTimeout(function () {
+        myRef.current.scrollTop = 2225 * (Math.floor(scrollY / 2225) + 1);
+        setScrolling(false);
+      }, 400);
+      setScrollY(myRef.current.scrollTop);
+      scrollProgressBar('down');
+    } else if (scrollY > myRef.current.scrollTop) {
+      setScrolling(true);
+      setTimeout(function () {
+        myRef.current.scrollTop = 2225 * Math.floor(scrollY / 2226);
+        setScrolling(false);
+      }, 400);
+      setScrollY(myRef.current.scrollTop);
+      scrollProgressBar('up');
+    } else {
+      console.log(Math.floor(scrollY / 2225));
+      myRef.current.scrollTop = scrollY;
+      document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+        transform: 'scale(1.1)',
+        easing: 'ease-in-out'
+      }, 400);
+    }
+  };
+
+  var scrollProgressBar = function scrollProgressBar(dir) {
+    if (animating) return;
+    animate(true);
+    setTimeout(function () {
+      animate(false);
+    }, 500);
+
+    switch (dir) {
+      case 'down':
+        if (!!document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 2))) {
+          var contentBox = document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 2));
+          contentBox.classList.add('scrolled');
+          contentBox.animate({
+            transform: 'scale(1)',
+            easing: 'ease-in-out'
+          }, 850);
+
+          if (!!document.getElementById("exp-content-".concat(Math.floor(scrollY / 2225) + 1))) {
+            document.getElementById("exp-content-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+              transform: 'scale(1.1)',
+              easing: 'ease-in-out'
+            }, 120); // setTimeout(() => {
+            //   document.getElementById(`exp-content-${(Math.floor(scrollY / 2225)) + 1}`).animate({
+            //     transform: 'scale(1)',
+            //     opacity: '0',
+            //     easing: 'ease-in-out',
+            //   }, 180);
+            // }, 115);
+          }
+        }
+
+        return;
+
+      case 'up':
+        if (!!document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 1))) {
+          document.getElementById("scroll-".concat(Math.floor(scrollY / 2225) + 2)).classList.remove('scrolled');
+
+          if (!!document.getElementById("exp-content-".concat(Math.floor(scrollY / 2225) + 1))) {
+            document.getElementById("exp-content-".concat(Math.floor(scrollY / 2225) + 1)).animate({
+              transform: 'scale(1.1)',
+              easing: 'ease-in-out'
+            }, 120); // setTimeout(() => {
+            //   document.getElementById(`exp-content-${(Math.floor(scrollY / 2225)) + 1}`).animate({
+            //     transform: 'scale(1)',
+            //     opacity: '0',
+            //     easing: 'ease-in-out',
+            //   }, 180);
+            // }, 115);
+          }
+        }
+
+        return;
+    }
+  };
+
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-content"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "content-scroll-progress"
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "scroll-1",
+    className: "scrolled techs-scroll-1",
+    initial: {
+      scale: 1
+    },
+    animate: {
+      scale: 1.1
+    },
+    transition: {
+      type: 'spring',
+      bounce: 0.6,
+      delay: 0.5
+    }
+  }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "scroll-2",
+    className: "techs-scroll-2",
+    initial: {
+      scale: 1
+    },
+    animate: {
+      scale: 1.1
+    },
+    transition: {
+      type: 'spring',
+      bounce: 0.6,
+      delay: 0.5
+    }
+  })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-title",
+    animate: {
+      opacity: 1,
+      y: '25vh'
+    },
+    transition: {
+      delay: 0.5
+    }
+  }, "Tech stacks | Languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
+    id: "techs-all-content",
+    ref: myRef,
+    onScroll: function onScroll() {
+      return handleScroll();
+    }
+  }, content, content2));
+};
 
 /* harmony default export */ __webpack_exports__["default"] = (Techs);
+;
 
 /***/ }),
 
@@ -3144,7 +4415,8 @@ var EducationCard = function EducationCard(props) {
       opacity: 0.4
     },
     id: "education-card",
-    className: "cards"
+    className: "cards",
+    key: "content1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     animate: isToggled ? "active" : "inActive",
     variants: variants,
@@ -3316,7 +4588,8 @@ var ExperienceCard = function ExperienceCard(props) {
       opacity: 0.4
     },
     id: "experience-card",
-    className: "cards"
+    className: "cards",
+    key: "content1"
   }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     animate: isToggled ? "active" : "inActive",
     variants: variants,
@@ -3691,21 +4964,7 @@ var SkillsCard = function SkillsCard(props) {
     className: "far fa-times-circle close-icon"
   }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null)), isToggled ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "content-container"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    id: "icons"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
-    id: "left-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "left-arrow-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-angle-double-left"
-  }))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].button, {
-    id: "right-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-    className: "right-arrow-icon"
-  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("i", {
-    className: "fas fa-angle-double-right"
-  })))), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
+  }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_content_content__WEBPACK_IMPORTED_MODULE_2__["default"], {
     card: "skills"
   })) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null)), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
@@ -4260,21 +5519,9 @@ var Socials = /*#__PURE__*/function (_React$Component) {
           });
         }
       }, this.state.display ? /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "socials-text-area",
-        transition: "0"
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
-        id: "socials-text",
-        whileHover: {
-          scale: 1.2,
-          transition: {
-            type: "spring",
-            bounce: 0.75
-          }
-        }
-      }, "SOCIALS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
         id: "social-icons",
         animate: {
-          x: '-6.5vw'
+          x: '-2.5vw'
         },
         transition: {
           delay: 0
@@ -4298,26 +5545,10 @@ var Socials = /*#__PURE__*/function (_React$Component) {
           }
         }
       }))) : /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "socials-text-area",
+        id: "social-icons" // animate={{ x: '22vw' }}
+        ,
         animate: {
-          x: 0
-        },
-        transition: {
-          delay: 0
-        }
-      }, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].p, {
-        id: "socials-text",
-        whileHover: {
-          scale: 1.2,
-          transition: {
-            type: "spring",
-            bounce: 0.75
-          }
-        }
-      }, "SOCIALS")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
-        id: "social-icons",
-        animate: {
-          x: '22vw'
+          x: '-1.5vw'
         },
         transition: {
           delay: 0
@@ -4408,11 +5639,11 @@ var Splash = /*#__PURE__*/function (_React$Component) {
   _createClass(Splash, [{
     key: "render",
     value: function render() {
-      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_top_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
+      return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
+        id: "unicorn"
+      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_header_top_nav__WEBPACK_IMPORTED_MODULE_1__["default"], {
         store: this.props.store
       }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_socials_socials__WEBPACK_IMPORTED_MODULE_3__["default"], {
-        store: this.props.store
-      }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_about_about__WEBPACK_IMPORTED_MODULE_4__["default"], {
         store: this.props.store
       })), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_cards_cards_container__WEBPACK_IMPORTED_MODULE_2__["default"], null));
     }
