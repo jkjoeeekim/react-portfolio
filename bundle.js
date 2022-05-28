@@ -5758,10 +5758,7 @@ document.addEventListener("DOMContentLoaded", function () {
   window.store = store; // for testing purpose, put methods onto windows. 
   // window.receiveTodo = receiveTodo;
   // window.receiveTodos = receiveTodos;
-
-  react_dom__WEBPACK_IMPORTED_MODULE_1___default.a.render( /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(_components_root__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    store: store
-  }), root);
+  // ReactDOM.render(<Root store={store} />, root);
 });
 
 /***/ }),

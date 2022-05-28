@@ -1378,3 +1378,16 @@ html {
   background-image: url(./frontend/assets/unicorn_nobg_90.png);
   z-index: 1000;
 }
+
+
+/* Website under construction broken settings */
+/* <----  Start ----> */
+#broken {
+  height: 200px;
+  width: 100%;
+  margin-top: 10vh;
+  text-align: center;
+  font-size: 4vh;
+  color: rgb(199, 41, 41);
+}
+/* <----  End   ----> */
