@@ -1147,7 +1147,7 @@ html {
   border: 2px solid rgb(210, 210, 210, 30%);
   background-color: rgb(210, 210, 210, 30%);
   border-radius: 20px;
-  transition: background 0.75s;
+  transition: background 1.5s;
 }
 
 #scroll-2 {
@@ -1155,7 +1155,7 @@ html {
   border: 2px solid rgb(210, 210, 210, 30%);
   background-color: rgb(210, 210, 210, 30%);
   border-radius: 20px;
-  transition: background 0.75s;
+  transition: background 1.5s;
 }
 
 #scroll-3 {
