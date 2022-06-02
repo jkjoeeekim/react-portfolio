@@ -588,7 +588,7 @@ const Education = (props) => {
         {content3}
         {content4}
       </motion.div>
-      <ReactTooltip delayShow={1000} scrollHide={true} resizeHide={true} clickable={true} />
+      <ReactTooltip delayShow={10} scrollHide={false} resizeHide={false} clickable={false} />
     </motion.div>
   );
 };

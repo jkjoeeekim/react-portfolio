@@ -312,7 +312,7 @@ const Techs = () => {
         transition={{ delay: 0, duration: 0.7, times: [0, 0.1, 0.2, 0.4, 0.5, 0.6, 0.7], type: 'spring', stiffness: 700, damping: 30 }}
       >
       </motion.div>
-      <ReactTooltip delayShow={200} scrollHide={true} resizeHide={true} clickable={true} />
+      <ReactTooltip delayShow={10} scrollHide={false} resizeHide={false} clickable={false} />
     </motion.div>
     // <motion.div
     // >
@@ -1166,7 +1166,10 @@ const Techs = () => {
       <motion.div
         id="techs-all-content"
         ref={myRef}
+        onClick={() => toggleTooltip()}
         onScroll={() => handleScroll()}
+        transition={{ delay: 50 }}
+        data-tip='Mouse scroll to navigate'
       >
         {content}
         {content2}

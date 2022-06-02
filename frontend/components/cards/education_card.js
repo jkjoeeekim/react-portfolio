@@ -119,7 +119,7 @@ const EducationCard = (props) => {
         </motion.div>
         <p className="cards-text">Education</p>
       </motion.div>
-      <ReactTooltip delayShow={1000} scrollHide={true} resizeHide={true} clickable={true} />
+      <ReactTooltip delayShow={10} scrollHide={false} resizeHide={true} clickable={false} />
     </AnimatePresence>
   );
 };

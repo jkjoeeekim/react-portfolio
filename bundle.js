@@ -1338,10 +1338,10 @@ var Education = function Education(props) {
     },
     "data-tip": "Mouse scroll to navigate"
   }, content1, content2, content3, content4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    delayShow: 1000,
-    scrollHide: true,
-    resizeHide: true,
-    clickable: true
+    delayShow: 10,
+    scrollHide: false,
+    resizeHide: false,
+    clickable: false
   }));
 };
 
@@ -2118,10 +2118,10 @@ var Experiences = function Experiences() {
     },
     "data-tip": "Mouse scroll to navigate"
   }, content1, content2, content3, content4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    delayShow: 1000,
-    scrollHide: true,
-    resizeHide: true,
-    clickable: true
+    delayShow: 10,
+    scrollHide: false,
+    resizeHide: false,
+    clickable: false
   }));
 };
 
@@ -2914,10 +2914,10 @@ var Projects = function Projects() {
     },
     "data-tip": "Mouse scroll to navigate"
   }, content1, content2, content3, content4), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    delayShow: 1000,
-    scrollHide: true,
-    resizeHide: true,
-    clickable: true
+    delayShow: 10,
+    scrollHide: false,
+    resizeHide: false,
+    clickable: false
   }));
 };
 
@@ -3359,10 +3359,10 @@ var Techs = function Techs() {
       damping: 30
     }
   }), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_3__["default"], {
-    delayShow: 200,
-    scrollHide: true,
-    resizeHide: true,
-    clickable: true
+    delayShow: 10,
+    scrollHide: false,
+    resizeHide: false,
+    clickable: false
   })) // <motion.div
   // >
   //   <motion.div
@@ -4337,9 +4337,16 @@ var Techs = function Techs() {
   }, "Tech stacks | Languages"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(framer_motion__WEBPACK_IMPORTED_MODULE_1__["motion"].div, {
     id: "techs-all-content",
     ref: myRef,
+    onClick: function onClick() {
+      return toggleTooltip();
+    },
     onScroll: function onScroll() {
       return handleScroll();
-    }
+    },
+    transition: {
+      delay: 50
+    },
+    "data-tip": "Mouse scroll to navigate"
   }, content, content2));
 };
 
@@ -4492,10 +4499,10 @@ var EducationCard = function EducationCard(props) {
   })) : ''), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("p", {
     className: "cards-text"
   }, "Education")), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement(react_tooltip__WEBPACK_IMPORTED_MODULE_2__["default"], {
-    delayShow: 1000,
-    scrollHide: true,
+    delayShow: 10,
+    scrollHide: false,
     resizeHide: true,
-    clickable: true
+    clickable: false
   }));
 };
 
