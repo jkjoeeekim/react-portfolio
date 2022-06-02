@@ -14,7 +14,5 @@ document.addEventListener("DOMContentLoaded", function () {
   // window.receiveTodo = receiveTodo;
   // window.receiveTodos = receiveTodos;
 
-  if (window.innerWidth > 1900) {
-    ReactDOM.render(<Root store={store} />, root);
-  }
+  if (window.innerWidth > 1900) ReactDOM.render(<Root store={store} />, root);
 });
